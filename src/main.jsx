@@ -1,6 +1,6 @@
 import React from "react";
 import {createRoot} from "react-dom/client";
-import {Mail,ExternalLink,ArrowUpRight,Code2,Brain,Database,Terminal,Download,Github,Linkedin} from "lucide-react";
+import {Mail,ExternalLink,ArrowUpRight,Code2,Brain,Database,Terminal,Download,Linkedin} from "lucide-react";
 import {motion} from "framer-motion";
 import "./style.css";
 
@@ -72,7 +72,7 @@ return <div className="site">
 
 <section id="leetcode" className="leetcode"><div><p className="eyebrow">05 — PROBLEM SOLVING</p><h2>LEETCODE <em>MODE.</em></h2><p>Practicing algorithms and data structures consistently.</p></div><a className="primary" href="https://leetcode.com/surenravi/" target="_blank">OPEN PROFILE <ArrowUpRight/></a></section>
 
-<section id="contact" className="contact"><p className="eyebrow">06 — CONTACT</p><h2>HAVE AN IDEA?<br/><em>LET'S BUILD IT.</em></h2><p>Learning, collaborating and building something meaningful — one project at a time.</p><div className="contactlinks"><a href="mailto:surenravi2701@gmail.com"><Mail/> EMAIL</a><a href="https://www.linkedin.com/in/Suren-Ravi" target="_blank"><Linkedin/> LINKEDIN</a><a href="https://leetcode.com/surenravi/" target="_blank"><Code2/> LEETCODE</a><a href="https://github.com/Suren-RK" target="_blank"><Github/> GITHUB</a></div></section>
+<section id="contact" className="contact"><p className="eyebrow">06 — CONTACT</p><h2>HAVE AN IDEA?<br/><em>LET'S BUILD IT.</em></h2><p>Learning, collaborating and building something meaningful — one project at a time.</p><div className="contactlinks"><a href="mailto:surenravi2701@gmail.com"><Mail/> EMAIL</a><a href="https://www.linkedin.com/in/Suren-Ravi" target="_blank"><Linkedin/> LINKEDIN</a><a href="https://leetcode.com/surenravi/" target="_blank"><Code2/> LEETCODE</a><a href="https://github.com/Suren-RK" target="_blank"><GitBranch/> GITHUB</a></div></section>
 </main>
 <footer><span>// BUILD · LEARN · GROW</span><span>AI × DATA × WEB</span><span>SUREN R. © 2026</span></footer>
 </div>

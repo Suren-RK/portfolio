@@ -24,7 +24,7 @@ return <div className="site">
 <main>
 <section className="hero">
   <div className="grid-bg"/>
-  <div className="cross cross1">+</div><div className="cross cross2">+</div><div className="cursor-orb">●</div>
+  <div className="cross cross1">+</div><div className="cross cross2">+</div><div className="cursor-orb">●</div><div className="cursor-ring"/><div className="cursor-dot"/>
   <div className="hero-left">
     <div className="status"><i/> SYSTEM STATUS: <b>ONLINE</b></div>
     <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} transition={{duration:.7}}>
@@ -39,7 +39,7 @@ return <div className="site">
   </div>
 
   <div className="hero-character">
-    <img src="/suren-avatar.jpg" alt="Suren illustrated avatar" onError={(e)=>{e.currentTarget.style.opacity=.18}}/>
+    <img src="/suren-avatar.jpg" alt="Suren illustrated avatar" onError={(e)=>{e.currentTarget.style.display="none"; e.currentTarget.parentElement.classList.add("avatar-missing")}}/>
     <div className="blue-block"/>
     <div className="scribble">Better<br/>Code<br/>Bigger<br/>Dreams</div>
   </div>
@@ -54,7 +54,7 @@ return <div className="site">
 <section className="ticker"><span>/// BUILD</span><span>/// LEARN</span><span>/// AI &amp; DATA SCIENCE</span><span>/// MODERN WEB</span><span>/// OPEN TO BUILD</span></section>
 
 <section id="about" className="section about">
-  <div className="avatar-card"><label>AVATAR.JPG</label><img src="/suren-avatar.jpg" alt="Suren avatar"/></div>
+  <div className="avatar-card"><label>AVATAR.JPG</label><img src="/suren-avatar.jpg" alt="Suren avatar" onError={(e)=>{e.currentTarget.style.display="none"; e.currentTarget.parentElement.classList.add("avatar-missing")}}/><div className="avatar-placeholder">SUREN<br/><span>AVATAR PENDING</span></div></div>
   <div><p className="eyebrow">01 — WHO AM I?</p><h2>Curious by nature.<br/><em>Builder by choice.</em></h2><p className="copy">I'm Suren R — an AI &amp; Data Science student and an aspiring developer. I turn ideas into clean, practical digital solutions.</p><div className="quote">&gt; Always learning, always building, always improving.<br/>&gt; Exploring AI, data, DSA and modern web development.</div><div className="badges"><span>📍 INDIA</span><span>🟢 LEARNING &amp; BUILDING</span></div></div>
 </section>
 

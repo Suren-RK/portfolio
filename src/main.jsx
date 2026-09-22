@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {createRoot} from "react-dom/client";
 import {Mail,ExternalLink,ArrowUpRight,Code2,Brain,Database,Terminal,Download,GitBranch} from "lucide-react";
 import {motion} from "framer-motion";
@@ -12,7 +12,7 @@ const projects=[
 const skills=["Python","Java","C / C++","React JS","HTML / CSS","JavaScript","Pandas","Git / GitHub","AWS","Tailwind CSS","DSA","Data Science"];
 
 function App(){
-return <div className="site">
+useEffect(()=>{\n  const ring=document.querySelector(".cursor-ring");\n  const dot=document.querySelector(".cursor-dot");\n  const move=(e)=>{ring.style.left=e.clientX+"px";ring.style.top=e.clientY+"px";dot.style.left=e.clientX+"px";dot.style.top=e.clientY+"px"};\n  const down=()=>ring.classList.add("cursor-click");\n  const up=()=>ring.classList.remove("cursor-click");\n  window.addEventListener("mousemove",move);window.addEventListener("mousedown",down);window.addEventListener("mouseup",up);\n  return ()=>{window.removeEventListener("mousemove",move);window.removeEventListener("mousedown",down);window.removeEventListener("mouseup",up)};\n},[]);\nreturn <div className="site">
 <nav className="topbar">
   <a className="brand" href="#">SUREN.exe <span>_</span></a>
   <div className="navlinks">

@@ -1,6 +1,6 @@
 import React from "react";
 import {createRoot} from "react-dom/client";
-import {Github,Linkedin,Mail,ExternalLink,ArrowUpRight,Code2,Brain,Database,Terminal} from "lucide-react";
+import {Mail,ExternalLink,ArrowUpRight,Code2,Brain,Database,Terminal} from "lucide-react";
 import {motion} from "framer-motion";
 import "./style.css";
 
@@ -30,11 +30,11 @@ return <div>
 
 <section id="skills" className="section"><p className="eyebrow">02 — TOOLKIT</p><h2>Things I <em>work with.</em></h2><div className="skillgrid">{skills.map((s,i)=><motion.div whileHover={{y:-4}} className="skill" key={s}><span>0{i+1}</span>{s}</motion.div>)}</div></section>
 
-<section id="projects" className="section"><div className="sectionhead"><div><p className="eyebrow">03 — SELECTED WORK</p><h2>Projects that <em>teach me.</em></h2></div><a href="https://github.com/Suren-RK?tab=repositories" target="_blank">View all <ArrowUpRight size={17}/></a></div><div className="projects">{projects.map((p,i)=><motion.article whileHover={{y:-7}} key={p.name}><div className="projecttop"><span>0{i+1}</span><a href={p.repo} target="_blank"><Github size={19}/></a></div><h3>{p.name}</h3><p>{p.desc}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="projectlink" href={p.repo} target="_blank">View repository <ExternalLink size={15}/></a></motion.article>)}</div></section>
+<section id="projects" className="section"><div className="sectionhead"><div><p className="eyebrow">03 — SELECTED WORK</p><h2>Projects that <em>teach me.</em></h2></div><a href="https://github.com/Suren-RK?tab=repositories" target="_blank">View all <ArrowUpRight size={17}/></a></div><div className="projects">{projects.map((p,i)=><motion.article whileHover={{y:-7}} key={p.name}><div className="projecttop"><span>0{i+1}</span><a href={p.repo} target="_blank"><ArrowUpRight size={19}/></a></div><h3>{p.name}</h3><p>{p.desc}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="projectlink" href={p.repo} target="_blank">View repository <ExternalLink size={15}/></a></motion.article>)}</div></section>
 
 <section className="section journey"><div><p className="eyebrow">04 — CURRENTLY</p><h2>Learning.<br/><em>Building. Improving.</em></h2></div><div className="journeygrid"><div><Brain/><h3>Artificial Intelligence</h3><p>Exploring AI concepts and practical applications.</p></div><div><Code2/><h3>Modern Web</h3><p>Building interfaces with React and Tailwind CSS.</p></div><div><Terminal/><h3>DSA & Problem Solving</h3><p>Practicing consistently on LeetCode.</p></div><div><Database/><h3>Data & Cloud</h3><p>Growing my data science and AWS fundamentals.</p></div></div></section>
 
-<section id="contact" className="contact"><p className="eyebrow">05 — CONTACT</p><h2>Have an idea?<br/><em>Let's build it.</em></h2><p>I'm always interested in learning, collaborating and building something meaningful.</p><div className="contactlinks"><a href="mailto:surenravi2701@gmail.com"><Mail/> Email</a><a href="https://www.linkedin.com/in/Suren-Ravi" target="_blank"><Linkedin/> LinkedIn</a><a href="https://leetcode.com/surenravi/" target="_blank"><Code2/> LeetCode</a><a href="https://github.com/Suren-RK" target="_blank"><Github/> GitHub</a></div></section>
+<section id="contact" className="contact"><p className="eyebrow">05 — CONTACT</p><h2>Have an idea?<br/><em>Let's build it.</em></h2><p>I'm always interested in learning, collaborating and building something meaningful.</p><div className="contactlinks"><a href="mailto:surenravi2701@gmail.com"><Mail/> Email</a><a href="https://www.linkedin.com/in/Suren-Ravi" target="_blank"><ArrowUpRight/> LinkedIn</a><a href="https://leetcode.com/surenravi/" target="_blank"><Code2/> LeetCode</a><a href="https://github.com/Suren-RK" target="_blank"><ArrowUpRight/> GitHub</a></div></section>
 </main>
 <footer><span>© 2026 Suren R.</span><span>Code today. Build tomorrow.</span></footer>
 </div>

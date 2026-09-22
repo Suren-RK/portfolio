@@ -1,6 +1,6 @@
 import React from "react";
 import {createRoot} from "react-dom/client";
-import {Mail,ExternalLink,ArrowUpRight,Code2,Brain,Database,Terminal,Download, Github, Linkedin, Instagram} from "lucide-react";
+import {Mail,ExternalLink,ArrowUpRight,Code2,Brain,Database,Terminal,Download} from "lucide-react";
 import {motion} from "framer-motion";
 import "./style.css";
 
@@ -33,7 +33,7 @@ return <div className="site">
       <div className="actions"><a className="primary" href="#projects"><ArrowUpRight/> VIEW PROJECTS</a><a className="resume" href="#"><Download/> DOWNLOAD RESUME</a></div>
     </motion.div>
     <div className="socials">
-      <a href="https://github.com/Suren-RK" target="_blank"><Github/></a><a href="https://www.linkedin.com/in/Suren-Ravi" target="_blank"><Linkedin/></a><a href="#"><Instagram/></a><a href="https://leetcode.com/surenravi/" target="_blank"><Code2/></a>
+      <a href="https://github.com/Suren-RK" target="_blank">GH</a><a href="https://www.linkedin.com/in/Suren-Ravi" target="_blank">in</a><a href="#">IG</a><a href="https://leetcode.com/surenravi/" target="_blank"><Code2/></a>
       <span>Follow me<br/>for more updates <ArrowUpRight/></span>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import {GitBranch, createRoot} from "react-dom/client";
-import {Mail,ExternalLink,ArrowUpRight,Code2,Brain,Database,Terminal,Download} from "lucide-react";
+import {Mail,ExternalLink,ArrowUpRight,Code2,Brain,Database,Terminal,Download,GitBranch} from "lucide-react";
 import {motion} from "framer-motion";
 import "./style.css";
 

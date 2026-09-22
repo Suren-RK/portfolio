@@ -29,3 +29,16 @@ footer{max-width:1450px;margin:auto;border-top:3px solid var(--ink);padding:24px
 @media(max-width:1050px){.navlinks{gap:14px;font-size:11px}.hero{padding-left:35px;padding-right:35px}.stack-window,.currently{display:none}.hero-character{right:0;width:55%}.hero h1{font-size:clamp(48px,7vw,80px)}}
 @media(max-width:800px){.topbar{margin-top:10px;height:auto;padding:10px 12px;flex-wrap:wrap}.brand{font-size:20px;padding:11px 14px}.navlinks{order:3;width:100%;overflow:auto;justify-content:flex-start;padding:10px 0}.hire{margin-left:auto}.hero{display:block;min-height:900px;padding:55px 22px 25px}.hero-character{position:absolute;right:-70px;bottom:0;width:85%;height:48%;opacity:.9}.hero-left{position:relative;z-index:6}.hero h1{font-size:48px;letter-spacing:-3px}.hero-line{font-size:15px}.socials{margin-top:45px}.ticker{justify-content:flex-start;overflow:hidden}.section{padding:80px 22px}.about{grid-template-columns:1fr;gap:45px}.avatar-card{min-height:360px}.avatar-card img{min-height:360px}.skillgrid{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}.log>div{grid-template-columns:70px 1fr}.log span{grid-column:2}.leetcode{padding:65px 22px;display:block}.leetcode .primary{margin-top:30px;width:max-content}.section-title h2{font-size:52px}.skills-section,.projects-section{padding-left:22px;padding-right:22px}footer{flex-direction:column;gap:10px}.currently,.stack-window{display:none}}
 @media(max-width:480px){.navlinks{display:none}.hero{min-height:830px}.hero h1{font-size:40px}.actions{flex-direction:column;align-items:flex-start}.hero-character{width:105%;right:-120px;height:45%}.skillgrid{grid-template-columns:1fr}.projects h3{font-size:28px}}
+
+
+/* Interactive cursor */
+html,body{cursor:none}
+a,button{cursor:none}
+.cursor-ring{position:fixed;z-index:9999;width:34px;height:34px;border:2px solid var(--blue);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:multiply;transition:width .15s,height .15s,border-color .15s;left:-100px;top:-100px}
+.cursor-dot{position:fixed;z-index:10000;width:7px;height:7px;background:var(--violet);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);left:-100px;top:-100px}
+a:hover~.cursor-ring{width:48px;height:48px}
+.avatar-missing{background:radial-gradient(circle at 50% 35%,rgba(37,99,255,.18),transparent 34%),linear-gradient(135deg,#eef4ff,#f4efff);display:grid;place-items:center}
+.avatar-placeholder{display:none;text-align:center;font:700 54px/.9 'Space Grotesk';letter-spacing:-3px;color:var(--blue)}
+.avatar-placeholder span{font:11px 'DM Mono';letter-spacing:1px;color:var(--ink)}
+.avatar-missing .avatar-placeholder{display:block}
+@media(max-width:800px){html,body{cursor:auto}a,button{cursor:pointer}.cursor-ring,.cursor-dot{display:none}}

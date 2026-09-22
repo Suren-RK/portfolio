@@ -1,5 +1,5 @@
 import React from "react";
-import {createRoot} from "react-dom/client";
+import {GitBranch, createRoot} from "react-dom/client";
 import {Mail,ExternalLink,ArrowUpRight,Code2,Brain,Database,Terminal,Download} from "lucide-react";
 import {motion} from "framer-motion";
 import "./style.css";

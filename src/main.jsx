@@ -16,10 +16,13 @@ useEffect(()=>{
   const ring=document.querySelector(".cursor-ring");
   const dot=document.querySelector(".cursor-dot");
   const move=(e)=>{ring.style.left=e.clientX+"px";ring.style.top=e.clientY+"px";dot.style.left=e.clientX+"px";dot.style.top=e.clientY+"px"};
+  const enter=()=>ring.classList.add("cursor-hover");
+  const leave=()=>ring.classList.remove("cursor-hover");
+  document.querySelectorAll("a,button").forEach(el=>{el.addEventListener("mouseenter",enter);el.addEventListener("mouseleave",leave)});
   const down=()=>ring.classList.add("cursor-click");
   const up=()=>ring.classList.remove("cursor-click");
   window.addEventListener("mousemove",move);window.addEventListener("mousedown",down);window.addEventListener("mouseup",up);
-  return ()=>{window.removeEventListener("mousemove",move);window.removeEventListener("mousedown",down);window.removeEventListener("mouseup",up)};
+  return ()=>{window.removeEventListener("mousemove",move);window.removeEventListener("mousedown",down);window.removeEventListener("mouseup",up);document.querySelectorAll("a,button").forEach(el=>{el.removeEventListener("mouseenter",enter);el.removeEventListener("mouseleave",leave)})};
 },[]);
 return <div className="site">
 <nav className="topbar">

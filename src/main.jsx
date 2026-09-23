@@ -77,7 +77,7 @@ return <div className="site">
   <div className="projects">{projects.map((p,i)=><motion.article whileHover={{y:-7}} key={p.name}><div className="projecttop"><span>PROJECT_0{i+1}</span><a href={p.repo} target="_blank"><ArrowUpRight/></a></div><h3>{p.name}</h3><p>{p.desc}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="projectlink" href={p.repo} target="_blank">VIEW REPOSITORY <ExternalLink size={14}/></a></motion.article>)}</div>
 </section>
 
-<section id="journey" className="section experience"><p className="eyebrow">04 — EXPERIENCE LOG</p><h2>LEARNING <em>IN PUBLIC.</em></h2><div className="log"><div><b>2026</b><strong>AI &amp; Data Science</strong><span>Building projects, learning React, DSA, AI and cloud fundamentals.</span></div><div><b>NOW</b><strong>Frontend Development</strong><span>Turning ideas into responsive interfaces and real projects.</span></div></div></section>
+<section id="journey" className="section experience"><p className="eyebrow">04 — MY JOURNEY</p><h2>LEARNING <em>IN PUBLIC.</em></h2><div className="log"><div><b>2026</b><strong>AI &amp; Data Science</strong><span>Building projects and developing a strong foundation in AI, data and problem solving.</span></div><div><b>NOW</b><strong>Project Building</strong><span>Turning ideas into practical projects while growing as a developer.</span></div></div></section>
 
 <section id="leetcode" className="leetcode"><div><p className="eyebrow">05 — PROBLEM SOLVING</p><h2>LEETCODE <em>MODE.</em></h2><p>Practicing algorithms and data structures consistently.</p></div><a className="primary" href="https://leetcode.com/surenravi/" target="_blank">OPEN PROFILE <ArrowUpRight/></a></section>
 

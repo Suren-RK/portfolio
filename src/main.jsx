@@ -5,9 +5,9 @@ import {motion} from "framer-motion";
 import "./style.css";
 
 const projects=[
-{name:"SkillQuest",desc:"A learning-focused project built while exploring modern web development.",tags:["React","JavaScript"],repo:"https://github.com/Suren-RK/Skilllquest"},
-{name:"Simple UI",desc:"Frontend experiments and UI practice focused on clean, usable interfaces.",tags:["HTML","CSS","JavaScript"],repo:"https://github.com/Suren-RK/simple-UI"},
-{name:"Games",desc:"Small interactive experiments created while learning development fundamentals.",tags:["Web","JavaScript"],repo:"https://github.com/Suren-RK/Games"}];
+{name:"SkillQuest",desc:"A learning-focused web project built while exploring modern frontend development.",tags:["React","JavaScript"],repo:"https://github.com/Suren-RK/Skilllquest"},
+{name:"Simple UI",desc:"A collection of frontend UI experiments focused on clean, practical interfaces.",tags:["HTML","CSS","JavaScript"],repo:"https://github.com/Suren-RK/simple-UI"},
+{name:"Games",desc:"Interactive web experiments created while learning development fundamentals.",tags:["Web","JavaScript"],repo:"https://github.com/Suren-RK/Games"}];
 
 const skills=["Python","Java","C / C++","React JS","HTML / CSS","MySQL","PostgreSQL","Pandas","Scikit-learn","XGBoost","Git / GitHub","Data Science"];
 

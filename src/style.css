@@ -48,11 +48,11 @@ footer{max-width:1450px;margin:auto;border-top:3px solid var(--ink);padding:24px
 html,body{cursor:none}
 a,button{cursor:none}
 .scanner-cursor{position:fixed;z-index:10000;left:-100px;top:-100px;width:38px;height:38px;transform:translate(-50%,-50%);pointer-events:none;transition:width .18s ease,height .18s ease}
-.scan-corner{position:absolute;width:9px;height:9px;border-color:var(--cyan);border-style:solid;filter:drop-shadow(0 0 4px rgba(0,217,255,.55));transition:all .18s ease}
+.scan-corner{position:absolute;width:10px;height:10px;border-color:#2563FF;border-style:solid;filter:drop-shadow(0 0 6px rgba(37,99,255,.9));transition:all .18s ease}
 .scan-corner.tl{left:0;top:0;border-width:1.5px 0 0 1.5px}.scan-corner.tr{right:0;top:0;border-width:1.5px 1.5px 0 0}.scan-corner.bl{left:0;bottom:0;border-width:0 0 1.5px 1.5px}.scan-corner.br{right:0;bottom:0;border-width:0 1.5px 1.5px 0}
-.scan-core{position:absolute;left:50%;top:50%;width:4px;height:4px;border-radius:50%;background:var(--violet);transform:translate(-50%,-50%);box-shadow:0 0 8px var(--violet)}
-.scanner-cursor:after{content:"";position:absolute;left:50%;top:50%;width:1px;height:46px;background:linear-gradient(to bottom,transparent,var(--cyan),transparent);transform:translate(-50%,-50%);opacity:.45}
+.scan-core{position:absolute;left:50%;top:50%;width:4px;height:4px;border-radius:50%;background:#8B5CF6;transform:translate(-50%,-50%);box-shadow:0 0 12px rgba(139,92,246,.95)}
+.scanner-cursor:after{content:"";position:absolute;left:50%;top:50%;width:1px;height:46px;background:linear-gradient(to bottom,transparent,#00D9FF,transparent);transform:translate(-50%,-50%);opacity:.45}
 .scanner-cursor.scanner-hover{width:52px;height:52px}
-.scanner-cursor.scanner-hover .scan-corner{width:12px;height:12px;border-color:var(--violet)}
-.scanner-cursor.scanner-hover .scan-core{width:6px;height:6px;background:var(--cyan)}
+.scanner-cursor.scanner-hover .scan-corner{width:12px;height:12px;border-color:#8B5CF6}
+.scanner-cursor.scanner-hover .scan-core{width:6px;height:6px;background:#00D9FF}
 @media(max-width:800px){html,body{cursor:auto}a,button{cursor:pointer}.scanner-cursor{display:none}}

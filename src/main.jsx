@@ -13,12 +13,15 @@ const skills=["Python","Java","C / C++","React JS","HTML / CSS","JavaScript","Pa
 
 function App(){
 useEffect(()=>{
-  const ring=document.querySelector(".cursor-ring");\n  const dot=document.querySelector(".cursor-dot");\n  const move=(e)=>{ring.style.left=e.clientX+"px";ring.style.top=e.clientY+"px";dot.style.left=e.clientX+"px";dot.style.top=e.clientY+"px"};
+  const ring=document.querySelector(".cursor-ring");
+  const dot=document.querySelector(".cursor-dot");
+  const move=(e)=>{ring.style.left=e.clientX+"px";ring.style.top=e.clientY+"px";dot.style.left=e.clientX+"px";dot.style.top=e.clientY+"px"};
   const down=()=>ring.classList.add("cursor-click");
   const up=()=>ring.classList.remove("cursor-click");
   window.addEventListener("mousemove",move);window.addEventListener("mousedown",down);window.addEventListener("mouseup",up);
   return ()=>{window.removeEventListener("mousemove",move);window.removeEventListener("mousedown",down);window.removeEventListener("mouseup",up)};
-},[]);\nreturn <div className="site">
+},[]);
+return <div className="site">
 <nav className="topbar">
   <a className="brand" href="#">SUREN.exe <span>_</span></a>
   <div className="navlinks">

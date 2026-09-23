@@ -45,8 +45,8 @@ return <div id="top" className="site">
       <h1>AI &amp; DATA SCIENCE<br/><strong>STUDENT<span>|</span></strong></h1>
       <p className="hero-line">Turning data into insights,<br/>and ideas into impact<span>_</span></p>
       <div className="actions">
-        <a className="primary" href="#projects"><ArrowUpRight/> VIEW PROJECTS</a>
-        <a className="resume" href="/Suren-R-Resume.html" download><Download/> DOWNLOAD RESUME</a>
+        <a className="primary" href="#projects" onClick={(e)=>{e.preventDefault();document.querySelector("#projects")?.scrollIntoView({behavior:"smooth"})}}><ArrowUpRight/> VIEW PROJECTS</a>
+        <a className="resume" href="/Suren-R-Resume.html" target="_blank" rel="noreferrer"><Download/> VIEW RESUME</a>
       </div>
     </motion.div>
     <div className="socials">

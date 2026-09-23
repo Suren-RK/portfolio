@@ -11,7 +11,7 @@ const projects=[
 
 const skills=[
   "Python","Java","C / C++","JavaScript","React JS","HTML / CSS",
-  "MySQL","PostgreSQL","Pandas","Scikit-learn","XGBoost","Git / GitHub"
+  "MySQL","Git / GitHub"
 ];
 
 function App(){

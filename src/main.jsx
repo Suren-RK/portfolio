@@ -37,7 +37,7 @@ return <div id="top" className="site">
 <main>
 <section className="hero">
   <div className="grid-bg"/>
-  <div className="cross cross1">+</div><div className="cross cross2">+</div><div className="cursor-orb">●</div>
+  <div className="cross cross1">+</div>
   <div className="scanner-cursor"><i className="scan-corner tl"/><i className="scan-corner tr"/><i className="scan-corner bl"/><i className="scan-corner br"/><span className="scan-core"/></div>
 
   <div className="hero-left">

@@ -51,7 +51,7 @@ return <div className="site">
   </div>
 
   <div className="hero-character">
-    <img src="/suren-avatar.jpg" alt="Suren illustrated avatar" onError={(e)=>{e.currentTarget.style.display="none"; e.currentTarget.parentElement.classList.add("avatar-missing")}}/>
+    <img src="/suren-avatar-transparent.png" alt="Suren illustrated avatar" onError={(e)=>{e.currentTarget.style.display="none"; e.currentTarget.parentElement.classList.add("avatar-missing")}}/>
     <div className="blue-block"/>
     <div className="scribble">Better<br/>Code<br/>Bigger<br/>Dreams</div>
   </div>

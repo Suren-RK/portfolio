@@ -77,7 +77,7 @@ return <div id="top" className="site">
 <section className="ticker"><span>/// BUILD</span><span>/// LEARN</span><span>/// AI &amp; DATA SCIENCE</span><span>/// MODERN WEB</span><span>/// OPEN TO BUILD</span></section>
 
 <section id="about" className="section about">
-  <div className="avatar-card"><label>AVATAR.PNG</label><img src="/suren-avatar.png" alt="Suren illustrated avatar"/></div>
+  <div className="avatar-card"><img src="/suren-avatar.png" alt="Suren illustrated avatar"/></div>
   <div><p className="eyebrow">01 — WHO AM I?</p><h2>Curious by nature.<br/><em>Builder by choice.</em></h2><p className="copy">I'm Suren R — an Artificial Intelligence &amp; Data Science student who enjoys building practical digital solutions. I work across programming, web development and AI while continuously improving my problem-solving skills.</p><div className="quote">&gt; Always learning, always building, always improving.<br/>&gt; Exploring AI, data, DSA, React and modern web development.</div><div className="badges"><span>📍 INDIA</span><span>🟢 LEARNING &amp; BUILDING</span></div></div>
 </section>
 

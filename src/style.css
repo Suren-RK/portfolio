@@ -44,15 +44,18 @@ footer{max-width:1450px;margin:auto;border-top:3px solid var(--ink);padding:24px
 
 
 
+
 /* SUREN.exe system scanner cursor */
 html,body{cursor:none}
 a,button{cursor:none}
-.scanner-cursor{position:fixed;z-index:10000;left:-100px;top:-100px;width:38px;height:38px;transform:translate(-50%,-50%);pointer-events:none;transition:width .18s ease,height .18s ease}
-.scan-corner{position:absolute;width:10px;height:10px;border-color:#8B5CF6;border-style:solid;filter:drop-shadow(0 0 8px rgba(139,92,246,.95));transition:all .18s ease}
-.scan-corner.tl{left:0;top:0;border-width:1.5px 0 0 1.5px}.scan-corner.tr{right:0;top:0;border-width:1.5px 1.5px 0 0}.scan-corner.bl{left:0;bottom:0;border-width:0 0 1.5px 1.5px}.scan-corner.br{right:0;bottom:0;border-width:0 1.5px 1.5px 0}
-.scan-core{position:absolute;left:50%;top:50%;width:4px;height:4px;border-radius:50%;background:#EC4899;transform:translate(-50%,-50%);box-shadow:0 0 14px rgba(236,72,153,.95)}
-.scanner-cursor:after{content:"";position:absolute;left:50%;top:50%;width:1px;height:46px;background:linear-gradient(to bottom,transparent,#F59E0B,transparent);transform:translate(-50%,-50%);opacity:.45}
-.scanner-cursor.scanner-hover{width:52px;height:52px}
-.scanner-cursor.scanner-hover .scan-corner{width:12px;height:12px;border-color:#8B5CF6}
-.scanner-cursor.scanner-hover .scan-core{width:6px;height:6px;background:#EC4899}
+.scanner-cursor{position:fixed;z-index:10000;left:-100px;top:-100px;width:54px;height:54px;transform:translate(-50%,-50%);pointer-events:none;transition:width .22s cubic-bezier(.2,.8,.2,1),height .22s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 0 9px rgba(0,217,255,.7))}
+.scan-corner{position:absolute;width:16px;height:16px;border-color:#00D9FF;border-style:solid;filter:drop-shadow(0 0 7px rgba(0,217,255,.95));transition:all .22s ease}
+.scan-corner.tl{left:0;top:0;border-width:3px 0 0 3px}.scan-corner.tr{right:0;top:0;border-width:3px 3px 0 0}.scan-corner.bl{left:0;bottom:0;border-width:0 0 3px 3px}.scan-corner.br{right:0;bottom:0;border-width:0 3px 3px 0}
+.scan-core{position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:#8B5CF6;transform:translate(-50%,-50%);box-shadow:0 0 16px #8B5CF6,0 0 28px rgba(139,92,246,.7);animation:scannerPulse 1.5s ease-in-out infinite}
+.scanner-cursor:after{content:"";position:absolute;left:50%;top:50%;width:2px;height:64px;background:linear-gradient(to bottom,transparent,#EC4899 25%,#F59E0B 50%,#EC4899 75%,transparent);transform:translate(-50%,-50%);opacity:.85;filter:drop-shadow(0 0 5px rgba(236,72,153,.8))}
+.scanner-cursor:before{content:"";position:absolute;left:50%;top:50%;width:64px;height:2px;background:linear-gradient(to right,transparent,#00D9FF 25%,#8B5CF6 50%,#00D9FF 75%,transparent);transform:translate(-50%,-50%);opacity:.7;filter:drop-shadow(0 0 5px rgba(0,217,255,.8))}
+.scanner-cursor.scanner-hover{width:76px;height:76px;filter:drop-shadow(0 0 14px rgba(0,217,255,.9))}
+.scanner-cursor.scanner-hover .scan-corner{width:21px;height:21px;border-color:#EC4899;filter:drop-shadow(0 0 10px rgba(236,72,153,1))}
+.scanner-cursor.scanner-hover .scan-core{width:14px;height:14px;background:#F59E0B;box-shadow:0 0 20px #F59E0B,0 0 36px rgba(245,158,11,.75)}
+@keyframes scannerPulse{0%,100%{transform:translate(-50%,-50%) scale(.85);opacity:.8}50%{transform:translate(-50%,-50%) scale(1.2);opacity:1}}
 @media(max-width:800px){html,body{cursor:auto}a,button{cursor:pointer}.scanner-cursor{display:none}}

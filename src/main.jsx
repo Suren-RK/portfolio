@@ -9,7 +9,10 @@ const projects=[
 {name:"Simple UI",desc:"A collection of frontend UI experiments focused on clean, practical interfaces.",tags:["HTML","CSS","JavaScript"],repo:"https://github.com/Suren-RK/simple-UI"},
 {name:"Games",desc:"Interactive web experiments created while learning development fundamentals.",tags:["Web","JavaScript"],repo:"https://github.com/Suren-RK/Games"}];
 
-const skills=["Python","Java","C / C++","React JS","HTML / CSS","MySQL","PostgreSQL","Pandas","Scikit-learn","XGBoost","Git / GitHub","Data Science"];
+const skills=[
+  "Python","Java","C / C++","JavaScript","React JS","HTML / CSS",
+  "MySQL","PostgreSQL","Pandas","Scikit-learn","XGBoost","Git / GitHub"
+];
 
 function App(){
 useEffect(()=>{

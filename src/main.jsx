@@ -91,7 +91,15 @@ return <div id="top" className="site">
   <div className="projects">{projects.map((p,i)=><motion.article whileHover={{y:-7}} key={p.name}><div className="projecttop"><span>PROJECT_0{i+1}</span><a href={p.repo} target="_blank" rel="noreferrer" aria-label={"Open "+p.name+" repository"}><ArrowUpRight/></a></div><h3>{p.name}</h3><p>{p.desc}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="projectlink" href={p.repo} target="_blank" rel="noreferrer">VIEW REPOSITORY <ExternalLink size={14}/></a></motion.article>)}</div>
 </section>
 
-<section id="experience" className="section experience"><p className="eyebrow">04 — MY JOURNEY</p><h2>LEARNING <em>IN PUBLIC.</em></h2><div className="log"><div><b>2026</b><strong>AI &amp; Data Science</strong><span>Building projects and developing a strong foundation in AI, data and problem solving.</span></div><div><b>NOW</b><strong>Project Building</strong><span>Turning ideas into practical projects while growing as a developer.</span></div></div></section>
+<section id="experience" className="section experience">
+  <p className="eyebrow">04 — MY JOURNEY</p>
+  <h2>LEARNING <em>IN PUBLIC.</em></h2>
+  <div className="log">
+    <div><b>2026</b><strong>Web Developer Intern</strong><span>MindzPerk Digital Agency — developed websites for clients using HTML and CSS.</span></div>
+    <div><b>NOW</b><strong>B.Tech AI &amp; Data Science</strong><span>VSB College of Engineering Technical Campus — 2nd Year, 3rd Semester. Expected graduation: 2029.</span></div>
+    <div><b>NOW</b><strong>Learning React JS</strong><span>Building interactive interfaces and strengthening modern frontend development skills.</span></div>
+  </div>
+</section>
 
 <section id="leetcode" className="leetcode"><div><p className="eyebrow">05 — PROBLEM SOLVING</p><h2>LEETCODE <em>MODE.</em></h2><p>Practicing algorithms and data structures consistently.</p></div><a className="primary" href="https://leetcode.com/surenravi/" target="_blank" rel="noreferrer">OPEN PROFILE <ArrowUpRight/></a></section>
 

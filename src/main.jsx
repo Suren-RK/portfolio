@@ -13,17 +13,16 @@ const skills=["Python","Java","C / C++","React JS","HTML / CSS","JavaScript","Pa
 
 function App(){
 useEffect(()=>{ 
-  const cursor=document.querySelector(".cursor-ring");
-  const dot=document.querySelector(".cursor-dot");
-  let x=0,y=0,rx=0,ry=0;
-  const move=(e)=>{x=e.clientX;y=e.clientY;dot.style.left=x+"px";dot.style.top=y+"px"};
-  const animate=()=>{rx+=(x-rx)*.16;ry+=(y-ry)*.16;cursor.style.left=rx+"px";cursor.style.top=ry+"px";requestAnimationFrame(animate)};
-  const enter=()=>cursor.classList.add("cursor-hover");
-  const leave=()=>cursor.classList.remove("cursor-hover");
+  const scanner=document.querySelector(".scanner-cursor");
+  let x=0,y=0,sx=0,sy=0;
+  const move=(e)=>{x=e.clientX;y=e.clientY};
+  const animate=()=>{sx+=(x-sx)*.18;sy+=(y-sy)*.18;if(scanner){scanner.style.left=sx+"px";scanner.style.top=sy+"px"}requestAnimationFrame(animate)};
+  const enter=()=>scanner?.classList.add("scanner-hover");
+  const leave=()=>scanner?.classList.remove("scanner-hover");
   document.addEventListener("mousemove",move);
   document.querySelectorAll("a,button").forEach(el=>{el.addEventListener("mouseenter",enter);el.addEventListener("mouseleave",leave)});
-  const frame=requestAnimationFrame(animate);
-  return ()=>{cancelAnimationFrame(frame);document.removeEventListener("mousemove",move);document.querySelectorAll("a,button").forEach(el=>{el.removeEventListener("mouseenter",enter);el.removeEventListener("mouseleave",leave)})};
+  requestAnimationFrame(animate);
+  return ()=>{document.removeEventListener("mousemove",move);document.querySelectorAll("a,button").forEach(el=>{el.removeEventListener("mouseenter",enter);el.removeEventListener("mouseleave",leave)})};
 },[]);
 return <div className="site">
 <nav className="topbar">
@@ -37,7 +36,7 @@ return <div className="site">
 <main>
 <section className="hero">
   <div className="grid-bg"/>
-  <div className="cross cross1">+</div><div className="cross cross2">+</div><div className="cursor-orb">●</div><div className="cursor-ring"/><div className="cursor-dot"/>
+  <div className="cross cross1">+</div><div className="cross cross2">+</div><div className="cursor-orb">●</div><div className="scanner-cursor"><i className="scan-corner tl"/><i className="scan-corner tr"/><i className="scan-corner bl"/><i className="scan-corner br"/><span className="scan-core"/></div>
   <div className="hero-left">
     <div className="status"><i/> SYSTEM STATUS: <b>ONLINE</b></div>
     <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} transition={{duration:.7}}>

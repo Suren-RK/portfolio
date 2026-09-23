@@ -31,14 +31,47 @@ footer{max-width:1450px;margin:auto;border-top:3px solid var(--ink);padding:24px
 @media(max-width:480px){.navlinks{display:none}.hero{min-height:830px}.hero h1{font-size:40px}.actions{flex-direction:column;align-items:flex-start}.hero-character{width:105%;right:-120px;height:45%}.skillgrid{grid-template-columns:1fr}.projects h3{font-size:28px}}
 
 
-/* Interactive cursor */
-html,body{cursor:none}
-a,button{cursor:none}
-.cursor-ring{position:fixed;z-index:9999;width:34px;height:34px;border:2px solid var(--blue);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:multiply;transition:width .15s,height .15s,border-color .15s;left:-100px;top:-100px}
-.cursor-dot{position:fixed;z-index:10000;width:7px;height:7px;background:var(--violet);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);left:-100px;top:-100px}
-a:hover~.cursor-ring{width:48px;height:48px}
-.avatar-missing{background:radial-gradient(circle at 50% 35%,rgba(37,99,255,.18),transparent 34%),linear-gradient(135deg,#eef4ff,#f4efff);display:grid;place-items:center}
-.avatar-placeholder{display:none;text-align:center;font:700 54px/.9 'Space Grotesk';letter-spacing:-3px;color:var(--blue)}
-.avatar-placeholder span{font:11px 'DM Mono';letter-spacing:1px;color:var(--ink)}
-.avatar-missing .avatar-placeholder{display:block}
+
 @media(max-width:800px){html,body{cursor:auto}a,button{cursor:pointer}.cursor-ring,.cursor-dot{display:none}}
+
+
+/* Minimal portfolio cursor */
+html, body { cursor: none; }
+a, button { cursor: none; }
+.cursor-ring {
+  position: fixed;
+  z-index: 9999;
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid var(--cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  left: -100px;
+  top: -100px;
+  transition: width .18s ease, height .18s ease, border-color .18s ease, opacity .18s ease;
+  opacity: .8;
+}
+.cursor-dot {
+  position: fixed;
+  z-index: 10000;
+  width: 5px;
+  height: 5px;
+  background: var(--violet);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  left: -100px;
+  top: -100px;
+}
+.cursor-ring.cursor-hover {
+  width: 42px;
+  height: 42px;
+  border-color: var(--blue);
+  opacity: 1;
+}
+@media (max-width: 800px) {
+  html, body { cursor: auto; }
+  a, button { cursor: pointer; }
+  .cursor-ring, .cursor-dot { display: none; }
+}

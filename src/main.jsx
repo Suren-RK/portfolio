@@ -12,17 +12,18 @@ const projects=[
 const skills=["Python","Java","C / C++","React JS","HTML / CSS","JavaScript","Pandas","Git / GitHub","AWS","Tailwind CSS","DSA","Data Science"];
 
 function App(){
-useEffect(()=>{
-  const ring=document.querySelector(".cursor-ring");
+useEffect(()=>{ 
+  const cursor=document.querySelector(".cursor-ring");
   const dot=document.querySelector(".cursor-dot");
-  const move=(e)=>{ring.style.left=e.clientX+"px";ring.style.top=e.clientY+"px";dot.style.left=e.clientX+"px";dot.style.top=e.clientY+"px"};
-  const enter=()=>ring.classList.add("cursor-hover");
-  const leave=()=>ring.classList.remove("cursor-hover");
+  let x=0,y=0,rx=0,ry=0;
+  const move=(e)=>{x=e.clientX;y=e.clientY;dot.style.left=x+"px";dot.style.top=y+"px"};
+  const animate=()=>{rx+=(x-rx)*.16;ry+=(y-ry)*.16;cursor.style.left=rx+"px";cursor.style.top=ry+"px";requestAnimationFrame(animate)};
+  const enter=()=>cursor.classList.add("cursor-hover");
+  const leave=()=>cursor.classList.remove("cursor-hover");
+  document.addEventListener("mousemove",move);
   document.querySelectorAll("a,button").forEach(el=>{el.addEventListener("mouseenter",enter);el.addEventListener("mouseleave",leave)});
-  const down=()=>ring.classList.add("cursor-click");
-  const up=()=>ring.classList.remove("cursor-click");
-  window.addEventListener("mousemove",move);window.addEventListener("mousedown",down);window.addEventListener("mouseup",up);
-  return ()=>{window.removeEventListener("mousemove",move);window.removeEventListener("mousedown",down);window.removeEventListener("mouseup",up);document.querySelectorAll("a,button").forEach(el=>{el.removeEventListener("mouseenter",enter);el.removeEventListener("mouseleave",leave)})};
+  const frame=requestAnimationFrame(animate);
+  return ()=>{cancelAnimationFrame(frame);document.removeEventListener("mousemove",move);document.querySelectorAll("a,button").forEach(el=>{el.removeEventListener("mouseenter",enter);el.removeEventListener("mouseleave",leave)})};
 },[]);
 return <div className="site">
 <nav className="topbar">

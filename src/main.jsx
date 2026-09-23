@@ -27,7 +27,7 @@ useEffect(()=>{
 
 return <div id="top" className="site">
 <nav className="topbar">
-  <a className="brand" href="#top" aria-label="Back to top">SUREN.exe <span>_</span></a>
+  <a className="brand" href="#top" aria-label="Back to top" onClick={(e)=>{e.preventDefault();window.scrollTo({top:0,behavior:"smooth"})}}>SUREN.exe <span>_</span></a>
   <div className="navlinks">
     <a href="#about">/ABOUT</a><a href="#skills">/SKILLS</a><a href="#projects">/PROJECTS</a><a href="#experience">/EXPERIENCE</a><a href="#leetcode">/LEETCODE</a><a href="#contact">/CONTACT</a>
   </div>

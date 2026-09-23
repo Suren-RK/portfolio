@@ -4,7 +4,9 @@
 .topbar{height:74px;display:flex;align-items:center;max-width:1560px;margin:28px auto 0;padding:0 16px;border:3px solid var(--ink);border-left:0;border-right:0;background:#fff;box-shadow:6px 6px 0 var(--ink);position:relative;z-index:20}
 .brand{font:700 27px 'DM Mono',monospace;border:3px solid var(--ink);padding:15px 22px;background:#fff;box-shadow:6px 6px 0 var(--ink);white-space:nowrap;margin-left:28px}.brand span{color:var(--blue)}
 .navlinks{display:flex;justify-content:flex-end;align-items:center;gap:38px;flex:1;padding-left:40px;font:600 13px 'DM Mono',monospace}.navlinks a:hover{color:var(--blue)}
-.hire,.primary{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--blue);color:#fff;border:2px solid var(--ink);padding:12px 17px;font:700 13px 'DM Mono',monospace;box-shadow:5px 5px 0 var(--ink);transition:.2s}.hire{margin-left:28px}.hire:hover,.primary:hover{background:var(--violet);transform:translate(-2px,-2px)}
+.hire,.primary{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--blue);color:#fff;border:2px solid var(--ink);padding:12px 17px;font:700 13px 'DM Mono',monospace;box-shadow:5px 5px 0 var(--ink);transition:.2s}.hire{margin-left:28px}@keyframes buttonFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.hire,.primary,.resume,.projectlink,.contactlinks a{animation:buttonFloat 2.8s ease-in-out infinite}
+.hire:hover,.primary:hover{background:var(--violet);transform:translate(-2px,-2px)}
 .hero{max-width:1560px;margin:auto;min-height:765px;position:relative;padding:68px 74px 25px;border-bottom:3px solid var(--ink);overflow:hidden}
 .grid-bg{position:absolute;inset:0;z-index:0;background-image:radial-gradient(#161616 1px,transparent 1px);background-size:31px 31px;opacity:.18;pointer-events:none}
 .hero-left{position:relative;z-index:6;width:55%}.status{display:inline-flex;align-items:center;gap:9px;border:2px solid var(--ink);padding:10px 15px;background:#fff;box-shadow:6px 6px 0 var(--ink);font:13px 'DM Mono',monospace;margin-bottom:37px}.status i{width:13px;height:13px;border-radius:50%;background:#20df64;display:block}.status b{color:#13b64e}

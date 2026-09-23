@@ -25,7 +25,7 @@ return <div className="site">
 <nav className="topbar">
   <a className="brand" href="#">SUREN.exe <span>_</span></a>
   <div className="navlinks">
-    <a href="#about">/ABOUT</a><a href="#skills">/SKILLS</a><a href="#projects">/PROJECTS</a><a href="#experience">/EXPERIENCE</a><a href="#leetcode">/LEETCODE</a><a href="#contact">/CONTACT</a>
+    <a href="#about">/ABOUT</a><a href="#skills">/SKILLS</a><a href="#projects">/PROJECTS</a><a href="#journey">/JOURNEY</a><a href="#leetcode">/LEETCODE</a><a href="#contact">/CONTACT</a>
   </div>
   <a className="hire" href="mailto:surenravi2701@gmail.com">HIRE ME <ArrowUpRight size={17}/></a>
 </nav>
@@ -42,7 +42,7 @@ return <div className="site">
       <div className="actions"><a className="primary" href="#projects"><ArrowUpRight/> VIEW PROJECTS</a><a className="resume" href="#"><Download/> DOWNLOAD RESUME</a></div>
     </motion.div>
     <div className="socials">
-      <a href="https://github.com/Suren-RK" target="_blank">GH</a><a href="https://www.linkedin.com/in/Suren-Ravi" target="_blank">in</a><a href="#">IG</a><a href="https://leetcode.com/surenravi/" target="_blank"><Code2/></a>
+      <a href="https://github.com/Suren-RK" target="_blank">GH</a><a href="https://www.linkedin.com/in/Suren-Ravi" target="_blank">in</a><a href="https://www.instagram.com/itz.surxn____/" target="_blank" rel="noreferrer">IG</a><a href="https://leetcode.com/surenravi/" target="_blank"><Code2/></a>
       <span>Follow me<br/>for more updates <ArrowUpRight/></span>
     </div>
   </div>
@@ -77,7 +77,7 @@ return <div className="site">
   <div className="projects">{projects.map((p,i)=><motion.article whileHover={{y:-7}} key={p.name}><div className="projecttop"><span>PROJECT_0{i+1}</span><a href={p.repo} target="_blank"><ArrowUpRight/></a></div><h3>{p.name}</h3><p>{p.desc}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="projectlink" href={p.repo} target="_blank">VIEW REPOSITORY <ExternalLink size={14}/></a></motion.article>)}</div>
 </section>
 
-<section id="experience" className="section experience"><p className="eyebrow">04 — EXPERIENCE LOG</p><h2>LEARNING <em>IN PUBLIC.</em></h2><div className="log"><div><b>2026</b><strong>AI &amp; Data Science</strong><span>Building projects, learning React, DSA, AI and cloud fundamentals.</span></div><div><b>NOW</b><strong>Frontend Development</strong><span>Turning ideas into responsive interfaces and real projects.</span></div></div></section>
+<section id="journey" className="section experience"><p className="eyebrow">04 — EXPERIENCE LOG</p><h2>LEARNING <em>IN PUBLIC.</em></h2><div className="log"><div><b>2026</b><strong>AI &amp; Data Science</strong><span>Building projects, learning React, DSA, AI and cloud fundamentals.</span></div><div><b>NOW</b><strong>Frontend Development</strong><span>Turning ideas into responsive interfaces and real projects.</span></div></div></section>
 
 <section id="leetcode" className="leetcode"><div><p className="eyebrow">05 — PROBLEM SOLVING</p><h2>LEETCODE <em>MODE.</em></h2><p>Practicing algorithms and data structures consistently.</p></div><a className="primary" href="https://leetcode.com/surenravi/" target="_blank">OPEN PROFILE <ArrowUpRight/></a></section>
 

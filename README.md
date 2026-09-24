@@ -2,6 +2,10 @@
 
 AI & Data Science student building practical projects with AI, data, and modern web technologies.
 
+## 🌐 Live Portfolio
+
+**[surenr.vercel.app](https://surenr.vercel.app)**
+
 ## Connect
 
 - GitHub: https://github.com/Suren-RK

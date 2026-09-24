@@ -29,7 +29,7 @@ useEffect(()=>{
 },[]);
 
 return <div id="top" className="site">
-<nav className="topbar">
+<nav className="topbar" aria-label="Main navigation">
   <a className="brand" href="#top" aria-label="Back to top" onClick={(e)=>{e.preventDefault();window.scrollTo({top:0,behavior:"smooth"})}}>SUREN.exe <span>_</span></a>
   <div className="navlinks">
     {["about","skills","projects","experience","leetcode","contact"].map(id=><a key={id} href={"#"+id} onClick={e=>{e.preventDefault();document.getElementById(id)?.scrollIntoView({behavior:"smooth"})}}>{"/"+id.toUpperCase()}</a>)}

@@ -68,8 +68,11 @@ return <div id="top" className="site">
   </div>
 
   <div className="stack-window">
-    <div>// TECH STACK <span>— □ ×</span></div>
-    {skills.slice(0,10).map(s=><p key={s}><b>&gt;</b> {s}</p>)}
+    <div className="stack-head"><span>// TECH_STACK</span><span>● LIVE</span></div>
+    <div className="stack-group"><small>◈ LANGUAGES</small><p><b>&gt;</b> Python</p><p><b>&gt;</b> Java</p><p><b>&gt;</b> C / C++</p></div>
+    <div className="stack-group"><small>◈ WEB</small><p><b>&gt;</b> HTML / CSS</p><p><b>&gt;</b> JavaScript</p><p><b>&gt;</b> React JS</p></div>
+    <div className="stack-group"><small>◈ TOOLS</small><p><b>&gt;</b> Git / GitHub</p></div>
+    <div className="stack-scan"><span>STATUS</span><b>LEARNING_MODE</b><i/></div>
   </div>
   <div className="currently"><span>// CURRENTLY</span><b>Learning React JS</b><i/></div>
 </section>

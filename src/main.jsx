@@ -83,7 +83,7 @@ return <div id="top" className="site">
 
 <section id="skills" className="skills-section">
   <div className="section-title"><h2>TECH<span>_STACK</span></h2><b>● SYSTEM_OPTIMIZED</b></div>
-  <div className="skillgrid">{skills.map((s,i)=><motion.div whileHover={{y:-4}} className="skill" key={s}><small>&gt;_ {["LANGUAGE","FRAMEWORK","DATABASE","TOOLS"][i%4]}</small><strong>{s}</strong></motion.div>)}</div>
+  <div className="skillgrid">{skills.map((s,i)=>{const type=s==="React JS"?"FRAMEWORK":(["HTML","CSS","JavaScript"].includes(s)?"WEB":"LANGUAGE");return <motion.div whileHover={{y:-6}} className="skill" key={s}><small><span>&gt;_</span> {type}</small><strong>{s}</strong><i>●</i></motion.div>})}</div>
 </section>
 
 <section id="projects" className="section projects-section">

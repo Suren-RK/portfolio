@@ -1,0 +1,20 @@
+/* EXPERIENCE // SYSTEM LOG MOTION */
+.experience{position:relative;overflow:hidden}
+.experience:before{content:"";position:absolute;left:70px;right:70px;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:.25}
+.log{position:relative}
+.log:before{content:"";position:absolute;left:55px;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--blue),var(--violet),var(--cyan));transform-origin:top;animation:timelineGlow 3s ease-in-out infinite}
+.log>div{position:relative;isolation:isolate;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .35s ease,padding-left .35s ease;overflow:hidden}
+.log>div:after{content:"";position:absolute;left:47px;top:50%;width:19px;height:19px;border:3px solid var(--ink);background:var(--paper);box-shadow:0 0 0 5px var(--paper),0 0 18px rgba(33,97,255,.35);transform:translateY(-50%) scale(.72);border-radius:50%;transition:transform .35s ease,background .35s ease,box-shadow .35s ease}
+.log>div:hover{transform:translateX(8px);background:linear-gradient(90deg,rgba(33,97,255,.06),transparent 65%);padding-left:8px}
+.log>div:hover:after{transform:translateY(-50%) scale(1);background:var(--blue);box-shadow:0 0 0 5px var(--paper),0 0 24px rgba(33,97,255,.65)}
+.log>div b{transition:color .3s ease,letter-spacing .3s ease}
+.log>div:hover b{color:var(--violet);letter-spacing:1px}
+.log>div strong{position:relative;display:inline-block;transition:transform .3s ease,color .3s ease}
+.log>div:hover strong{transform:translateX(7px);color:var(--blue)}
+.log>div span{transition:color .3s ease,transform .3s ease}
+.log>div:hover span{color:#252525;transform:translateX(4px)}
+.log>div:before{content:"// ENTRY ACTIVE";position:absolute;right:18px;top:18px;color:var(--blue);font:9px 'DM Mono',monospace;letter-spacing:1px;opacity:0;transform:translateY(-5px);transition:opacity .3s ease,transform .3s ease}
+.log>div:hover:before{opacity:1;transform:translateY(0)}
+@keyframes timelineGlow{0%,100%{opacity:.35;filter:drop-shadow(0 0 0 rgba(33,97,255,0))}50%{opacity:.8;filter:drop-shadow(0 0 8px rgba(33,97,255,.35))}}
+@media(max-width:800px){.experience:before{left:22px;right:22px}.log:before{left:9px}.log>div:after{left:1px}.log>div:before{display:none}.log>div:hover{transform:translateX(4px)}}
+@media(prefers-reduced-motion:reduce){.log:before{animation:none}.log>div,.log>div:after,.log>div strong,.log>div span{transition:none}.log>div:hover{transform:none}.log>div:hover strong,.log>div:hover span{transform:none}}

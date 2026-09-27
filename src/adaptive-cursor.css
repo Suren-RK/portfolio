@@ -1,5 +1,6 @@
 /* SUREN.EXE adaptive cursor */
 html,body,.site,a,button,input,textarea,select{cursor:none!important}
+.scanner-cursor{display:none!important}
 .adaptive-cursor{position:fixed;left:-100px;top:-100px;width:34px;height:34px;z-index:100000;pointer-events:none;transform:translate(-50%,-50%);transition:width .22s ease,height .22s ease,filter .22s ease;filter:drop-shadow(0 0 8px rgba(0,217,255,.55))}
 .cursor-core{position:absolute;left:50%;top:50%;width:7px;height:7px;border-radius:50%;background:var(--cyan);transform:translate(-50%,-50%);box-shadow:0 0 10px var(--cyan),0 0 22px rgba(0,217,255,.55);transition:.2s ease}
 .cursor-ring{position:absolute;inset:5px;border:1px solid rgba(0,217,255,.5);border-radius:50%;transition:.25s ease}

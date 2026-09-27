@@ -4,6 +4,7 @@ import {Mail,ExternalLink,ArrowUpRight,Code2,Download,GitBranch} from "lucide-re
 import {motion,useMotionValue,useSpring} from "framer-motion";
 import "./style.css";
 import "./project-motion.css";
+import "./experience-motion.css";
 
 const projects=[
 {name:"SkillQuest",desc:"A learning-focused web project built while exploring modern frontend development.",tags:["React","JavaScript"],repo:"https://github.com/Suren-RK/Skilllquest"},

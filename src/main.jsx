@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
+import React, {useEffect,useRef} from "react";
 import {createRoot} from "react-dom/client";
 import {Mail,ExternalLink,ArrowUpRight,Code2,Download,GitBranch} from "lucide-react";
-import {motion} from "framer-motion";
+import {motion,useMotionValue,useSpring} from "framer-motion";
 import "./style.css";
 
 const projects=[
@@ -15,18 +15,21 @@ const skills=[
 ];
 
 function App(){
+const heroRef=useRef(null);
+const mouseX=useMotionValue(0),mouseY=useMotionValue(0);
+const smoothX=useSpring(mouseX,{stiffness:90,damping:20}),smoothY=useSpring(mouseY,{stiffness:90,damping:20});
 useEffect(()=>{
   const scanner=document.querySelector(".scanner-cursor");
-  let x=0,y=0,sx=0,sy=0;
-  const move=(e)=>{x=e.clientX;y=e.clientY};
-  const animate=()=>{sx+=(x-sx)*.18;sy+=(y-sy)*.18;if(scanner){scanner.style.left=sx+"px";scanner.style.top=sy+"px"}requestAnimationFrame(animate)};
+  let x=0,y=0,sx=0,sy=0,frame;
+  const move=(e)=>{x=e.clientX;y=e.clientY;if(heroRef.current){const r=heroRef.current.getBoundingClientRect();mouseX.set(((e.clientX-r.left)/r.width-.5)*2);mouseY.set(((e.clientY-r.top)/r.height-.5)*2)}};
+  const animate=()=>{sx+=(x-sx)*.18;sy+=(y-sy)*.18;if(scanner){scanner.style.left=sx+"px";scanner.style.top=sy+"px"}frame=requestAnimationFrame(animate)};
   const enter=()=>scanner?.classList.add("scanner-hover");
   const leave=()=>scanner?.classList.remove("scanner-hover");
   document.addEventListener("mousemove",move);
   document.querySelectorAll("a,button").forEach(el=>{el.addEventListener("mouseenter",enter);el.addEventListener("mouseleave",leave)});
-  requestAnimationFrame(animate);
-  return ()=>{document.removeEventListener("mousemove",move);document.querySelectorAll("a,button").forEach(el=>{el.removeEventListener("mouseenter",enter);el.removeEventListener("mouseleave",leave)})};
-},[]);
+  frame=requestAnimationFrame(animate);
+  return ()=>{document.removeEventListener("mousemove",move);cancelAnimationFrame(frame);document.querySelectorAll("a,button").forEach(el=>{el.removeEventListener("mouseenter",enter);el.removeEventListener("mouseleave",leave)})};
+},[mouseX,mouseY]);
 
 return <div id="top" className="site">
 <nav className="topbar" aria-label="Main navigation">
@@ -38,57 +41,58 @@ return <div id="top" className="site">
 </nav>
 
 <main>
-<section className="hero">
+<section className="hero" ref={heroRef}>
   <div className="grid-bg"/>
-  <div className="scanner-cursor"><i className="scan-corner tl"/><i className="scan-corner tr"/><i className="scan-corner bl"/><i className="scan-corner br"/><span className="scan-core"/></div>
+  <motion.div className="grid-bg" aria-hidden="true" animate={{opacity:[.12,.22,.12]}} transition={{duration:4,repeat:Infinity,ease:"easeInOut"}}/>
+  <motion.div className="scanner-cursor" aria-hidden="true"><i className="scan-corner tl"/><i className="scan-corner tr"/><i className="scan-corner bl"/><i className="scan-corner br"/><span className="scan-core"/></motion.div>
 
-  <div className="hero-left">
-    <div className="status"><i/> SYSTEM STATUS: <b>ONLINE</b></div>
-    <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} transition={{duration:.7}}>
+  <motion.div className="hero-left" initial={{opacity:0,x:-28}} animate={{opacity:1,x:0}} transition={{duration:.8,ease:[.2,.8,.2,1]}}>
+    <motion.div className="status" initial={{opacity:0,y:-12}} animate={{opacity:1,y:0}} transition={{delay:.15,duration:.55}}><motion.i animate={{scale:[1,1.22,1],opacity:[1,.65,1]}} transition={{duration:1.6,repeat:Infinity}}/> SYSTEM STATUS: <b>ONLINE</b></motion.div>
+    <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} transition={{delay:.25,duration:.75}}>
       <h1>AI &amp; DATA SCIENCE<br/><strong>STUDENT<span>|</span></strong></h1>
       <p className="hero-line">Turning data into insights,<br/>and ideas into impact<span>_</span></p>
       <div className="actions">
-        <a className="primary" href="#projects" onClick={(e)=>{e.preventDefault();document.querySelector("#projects")?.scrollIntoView({behavior:"smooth"})}}><ArrowUpRight/> VIEW PROJECTS</a>
-        <a className="resume" href="/Suren-R-Resume.html" target="_blank" rel="noreferrer"><Download/> VIEW RESUME</a>
+        <motion.a className="primary" href="#projects" whileHover={{x:-3,y:-3}} whileTap={{scale:.97}} onClick={(e)=>{e.preventDefault();document.querySelector("#projects")?.scrollIntoView({behavior:"smooth"})}}><ArrowUpRight/> VIEW PROJECTS</motion.a>
+        <motion.a className="resume" href="/Suren-R-Resume.html" target="_blank" rel="noreferrer" whileHover={{x:-3,y:-3}} whileTap={{scale:.97}}><Download/> VIEW RESUME</motion.a>
       </div>
     </motion.div>
-    <div className="socials">
+    <motion.div className="socials" initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{delay:.55,duration:.7}}>
       <a href="https://github.com/Suren-RK" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a>
       <a href="https://www.linkedin.com/in/Suren-Ravi" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
       <a href="https://www.instagram.com/itz.surxn____/" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
       <a href="https://leetcode.com/surenravi/" target="_blank" rel="noreferrer" aria-label="LeetCode"><Code2/></a>
       <span>Follow me<br/>for more updates <ArrowUpRight/></span>
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 
-  <div className="hero-character">
+  <motion.div className="hero-character" style={{x:smoothX,y:smoothY}} initial={{opacity:0,scale:.96}} animate={{opacity:1,scale:1}} transition={{delay:.2,duration:1,ease:[.2,.8,.2,1]}}>
     <img src="/suren-avatar.png" alt="Suren illustrated avatar" onError={(e)=>{e.currentTarget.style.display="none";e.currentTarget.parentElement.classList.add("avatar-missing")}}/>
-    <div className="blue-block"/>
-    <div className="scribble">Better<br/>Code<br/>Bigger<br/>Dreams</div>
-  </div>
+    <motion.div className="blue-block" style={{x:smoothX,y:smoothY}} animate={{opacity:[.82,.96,.82]}} transition={{duration:3.5,repeat:Infinity,ease:"easeInOut"}}/>
+    <motion.div className="scribble" animate={{rotate:[-7,-5,-7],y:[0,-5,0]}} transition={{duration:3,repeat:Infinity,ease:"easeInOut"}}>Better<br/>Code<br/>Bigger<br/>Dreams</motion.div>
+  </motion.div>
 
-  <div className="stack-window">
+  <motion.div className="stack-window" style={{x:smoothX,y:smoothY}} initial={{opacity:0,y:-20}} animate={{opacity:1,y:0}} transition={{delay:.65,duration:.7}}>
     <div>// TECH STACK <span>— □ ×</span></div>
-    {skills.slice(0,10).map(s=><p key={s}><b>&gt;</b> {s}</p>)}
-  </div>
-  <div className="currently"><span>// CURRENTLY</span><b>Learning React JS</b><i/></div>
+    {skills.slice(0,10).map((s,i)=><motion.p key={s} initial={{opacity:0,x:12}} animate={{opacity:1,x:0}} transition={{delay:.8+i*.07}}><b>&gt;</b> {s}</motion.p>)}
+  </motion.div>
+  <motion.div className="currently" initial={{opacity:0,x:25}} animate={{opacity:1,x:0}} transition={{delay:1,duration:.65}}><span>// CURRENTLY</span><b>Learning React JS</b><i/></motion.div>
 </section>
 
 <section className="ticker"><span>/// BUILD</span><span>/// LEARN</span><span>/// AI &amp; DATA SCIENCE</span><span>/// MODERN WEB</span><span>/// OPEN TO BUILD</span></section>
 
 <section id="about" className="section about">
-  <div className="avatar-card"><img src="/suren-avatar.png" alt="Suren illustrated avatar"/></div>
-  <div><p className="eyebrow">01 — WHO AM I?</p><h2>Curious by nature.<br/><em>Builder by choice.</em></h2><p className="copy">I'm Suren R — an Artificial Intelligence &amp; Data Science student who enjoys building practical digital solutions. I work across programming, web development and AI while continuously improving my problem-solving skills.</p><div className="quote">&gt; Always learning, always building, always improving.<br/>&gt; Exploring AI, data, DSA, React and modern web development.</div><div className="badges"><span>📍 INDIA</span><span>🟢 LEARNING &amp; BUILDING</span></div></div>
+  <motion.div className="avatar-card" initial={{opacity:0,x:-45}} whileInView={{opacity:1,x:0}} viewport={{once:true,amount:.25}} transition={{duration:.7}}><img src="/suren-avatar.png" alt="Suren illustrated avatar"/></motion.div>
+  <motion.div initial={{opacity:0,x:45}} whileInView={{opacity:1,x:0}} viewport={{once:true,amount:.25}} transition={{duration:.7,delay:.1}}><p className="eyebrow">01 — WHO AM I?</p><h2>Curious by nature.<br/><em>Builder by choice.</em></h2><p className="copy">I'm Suren R — an Artificial Intelligence &amp; Data Science student who enjoys building practical digital solutions. I work across programming, web development and AI while continuously improving my problem-solving skills.</p><div className="quote">&gt; Always learning, always building, always improving.<br/>&gt; Exploring AI, data, DSA, React and modern web development.</div><div className="badges"><span>📍 INDIA</span><span>🟢 LEARNING &amp; BUILDING</span></div></motion.div>
 </section>
 
 <section id="skills" className="skills-section">
   <div className="section-title"><h2>TECH<span>_STACK</span></h2><b>● SYSTEM_OPTIMIZED</b></div>
-  <div className="skillgrid">{skills.map((s,i)=>{const type=s==="React JS"?"FRAMEWORK":(["HTML","CSS","JavaScript"].includes(s)?"WEB":"LANGUAGE");return <motion.div whileHover={{y:-6}} className="skill" key={s}><small><span>&gt;_</span> {type}</small><strong>{s}</strong><i>●</i></motion.div>})}</div>
+  <div className="skillgrid">{skills.map((s,i)=>{const type=s==="React JS"?"FRAMEWORK":(["HTML","CSS","JavaScript"].includes(s)?"WEB":"LANGUAGE");return <motion.div whileHover={{y:-6,scale:1.02}} whileInView={{opacity:[0,1],y:[18,0]}} viewport={{once:true,amount:.15}} transition={{duration:.45,delay:i*.05}} className="skill" key={s}><small><span>&gt;_</span> {type}</small><strong>{s}</strong><i>●</i></motion.div>})}</div>
 </section>
 
 <section id="projects" className="section projects-section">
   <div className="section-title light"><h2>SELECTED <span>WORK</span></h2><a href="https://github.com/Suren-RK?tab=repositories" target="_blank" rel="noreferrer">VIEW ALL ↗</a></div>
-  <div className="projects">{projects.map((p,i)=><motion.article whileHover={{y:-7}} key={p.name}><div className="projecttop"><span>PROJECT_0{i+1}</span><a href={p.repo} target="_blank" rel="noreferrer" aria-label={"Open "+p.name+" repository"}><ArrowUpRight/></a></div><h3>{p.name}</h3><p>{p.desc}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="projectlink" href={p.repo} target="_blank" rel="noreferrer">VIEW REPOSITORY <ExternalLink size={14}/></a></motion.article>)}</div>
+  <div className="projects">{projects.map((p,i)=><motion.article initial={{opacity:0,y:35}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.2}} transition={{duration:.55,delay:i*.1}} whileHover={{y:-9,rotateX:1,rotateY:-1}} whileTap={{scale:.985}} style={{transformStyle:"preserve-3d"}} key={p.name}><div className="projecttop"><span>PROJECT_0{i+1}</span><motion.a whileHover={{rotate:8,scale:1.08}} href={p.repo} target="_blank" rel="noreferrer" aria-label={"Open "+p.name+" repository"}><ArrowUpRight/></motion.a></div><h3>{p.name}</h3><p>{p.desc}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="projectlink" href={p.repo} target="_blank" rel="noreferrer">VIEW REPOSITORY <ExternalLink size={14}/></a></motion.article>)}</div>
 </section>
 
 <section id="experience" className="section experience">

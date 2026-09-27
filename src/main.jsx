@@ -1,5 +1,4 @@
 import React, {useEffect} from "react";
-import {createRoot} from "react-dom/client";
 import {Mail,ExternalLink,ArrowUpRight,Code2,Download,GitBranch} from "lucide-react";
 import {motion} from "framer-motion";
 import "./style.css";
@@ -16,16 +15,23 @@ const skills=[
 
 function App(){
 useEffect(()=>{
-  const scanner=document.querySelector(".scanner-cursor");
-  let x=0,y=0,sx=0,sy=0;
+  const cursor=document.querySelector(".adaptive-cursor");
+  if(!cursor) return;
+  let x=window.innerWidth/2,y=window.innerHeight/2,sx=x,sy=y,raf;
   const move=(e)=>{x=e.clientX;y=e.clientY};
-  const animate=()=>{sx+=(x-sx)*.18;sy+=(y-sy)*.18;if(scanner){scanner.style.left=sx+"px";scanner.style.top=sy+"px"}requestAnimationFrame(animate)};
-  const enter=()=>scanner?.classList.add("scanner-hover");
-  const leave=()=>scanner?.classList.remove("scanner-hover");
-  document.addEventListener("mousemove",move);
-  document.querySelectorAll("a,button").forEach(el=>{el.addEventListener("mouseenter",enter);el.addEventListener("mouseleave",leave)});
-  requestAnimationFrame(animate);
-  return ()=>{document.removeEventListener("mousemove",move);document.querySelectorAll("a,button").forEach(el=>{el.removeEventListener("mouseenter",enter);el.removeEventListener("mouseleave",leave)})};
+  const updateState=(e)=>{
+    const target=e.target?.closest?.("a,button,input,textarea,select,[role='button'],[data-cursor]");
+    const state=target?.dataset?.cursor || (target?.matches?.("input,textarea,select") ? "text" : target?.matches?.("a") ? "link" : target ? "button" : "core");
+    cursor.dataset.state=state;
+  };
+  const animate=()=>{sx+=(x-sx)*.2;sy+=(y-sy)*.2;cursor.style.left=sx+"px";cursor.style.top=sy+"px";raf=requestAnimationFrame(animate)};
+  document.addEventListener("mousemove",move,{passive:true});
+  document.addEventListener("mouseover",updateState,{passive:true});
+  document.addEventListener("mouseout",updateState,{passive:true});
+  document.addEventListener("mousedown",()=>cursor.classList.add("cursor-click"));
+  document.addEventListener("mouseup",()=>cursor.classList.remove("cursor-click"));
+  raf=requestAnimationFrame(animate);
+  return ()=>{cancelAnimationFrame(raf);document.removeEventListener("mousemove",move);document.removeEventListener("mouseover",updateState);document.removeEventListener("mouseout",updateState);document.removeEventListener("mousedown",()=>{});document.removeEventListener("mouseup",()=>{})};
 },[]);
 
 return <div id="top" className="site">
@@ -40,7 +46,11 @@ return <div id="top" className="site">
 <main>
 <section className="hero">
   <div className="grid-bg"/>
-  <div className="scanner-cursor"><i className="scan-corner tl"/><i className="scan-corner tr"/><i className="scan-corner bl"/><i className="scan-corner br"/><span className="scan-core"/></div>
+  <div className="adaptive-cursor" data-state="core" aria-hidden="true">
+    <span className="cursor-core"/><span className="cursor-ring"/><span className="cursor-glyph cursor-glyph-core">·</span>
+    <span className="cursor-glyph cursor-glyph-text">I</span><span className="cursor-glyph cursor-glyph-link">↗</span><span className="cursor-glyph cursor-glyph-button">&gt;_</span><span className="cursor-glyph cursor-glyph-view">+</span><span className="cursor-glyph cursor-glyph-drag">✦</span>
+    <span className="cursor-label"/>
+  </div>
 
   <div className="hero-left">
     <div className="status"><i/> SYSTEM STATUS: <b>ONLINE</b></div>

@@ -1,0 +1,82 @@
+/* PROJECT MOTION — portfolio-motion branch */
+.projects article{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+.projects article::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  z-index:-1;
+  background:linear-gradient(115deg,transparent 20%,rgba(33,97,255,.18) 44%,rgba(139,92,246,.18) 52%,transparent 72%);
+  transform:translateX(-120%);
+  transition:transform .75s cubic-bezier(.2,.8,.2,1);
+}
+.projects article::after{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  right:-110px;
+  top:-110px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(0,217,255,.22),transparent 68%);
+  opacity:0;
+  transition:opacity .35s ease,transform .5s ease;
+  pointer-events:none;
+}
+.projects article:hover::before{transform:translateX(120%)}
+.projects article:hover::after{opacity:1;transform:translate(-22px,22px)}
+.projects article .projecttop{position:relative;z-index:2}
+.projects article .projecttop>span{
+  transition:color .25s ease,letter-spacing .25s ease;
+}
+.projects article:hover .projecttop>span{color:var(--blue);letter-spacing:1.5px}
+.projects article h3{
+  position:relative;
+  z-index:2;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),color .25s ease;
+}
+.projects article:hover h3{transform:translateX(7px);color:var(--blue)}
+.projects article p{position:relative;z-index:2;transition:transform .3s ease,color .3s ease}
+.projects article:hover p{transform:translateX(4px);color:#303030}
+.projects article .tags{position:relative;z-index:2}
+.projects article .tags span{
+  transition:transform .25s ease,background .25s ease,color .25s ease,border-color .25s ease;
+}
+.projects article:hover .tags span:nth-child(1){transform:translateY(-3px)}
+.projects article:hover .tags span:nth-child(2){transform:translateY(-5px);transition-delay:.04s}
+.projects article:hover .tags span:nth-child(3){transform:translateY(-3px);transition-delay:.08s}
+.projects article:hover .tags span{background:#101114;color:#fff;border-color:#101114}
+.projects article .projecttop a{
+  position:relative;
+  overflow:hidden;
+  transition:background .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+.projects article .projecttop a::after{
+  content:"";
+  position:absolute;
+  width:8px;height:70px;
+  background:rgba(255,255,255,.65);
+  transform:rotate(35deg) translateY(-60px);
+  transition:transform .45s ease;
+}
+.projects article:hover .projecttop a::after{transform:rotate(35deg) translateY(55px)}
+.projects article:hover .projecttop a{background:var(--violet);box-shadow:3px 3px 0 var(--ink)}
+.projects article .projectlink{
+  position:relative;
+  z-index:2;
+  transition:gap .25s ease,color .25s ease,transform .25s ease;
+}
+.projects article:hover .projectlink{gap:11px;color:var(--violet);transform:translateX(3px)}
+@media(max-width:800px){
+  .projects article::before,.projects article::after{display:none}
+  .projects article:hover h3,.projects article:hover p,.projects article:hover .projectlink{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .projects article,.projects article::before,.projects article::after,.projects article h3,.projects article p,.projects article .tags span,.projects article .projecttop a,.projects article .projectlink{transition:none!important}
+  .projects article::before,.projects article::after{display:none}
+}

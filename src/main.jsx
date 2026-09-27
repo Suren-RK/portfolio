@@ -21,17 +21,19 @@ useEffect(()=>{
   const move=(e)=>{x=e.clientX;y=e.clientY};
   const updateState=(e)=>{
     const target=e.target?.closest?.("a,button,input,textarea,select,[role='button'],[data-cursor]");
-    const state=target?.dataset?.cursor || (target?.matches?.("input,textarea,select") ? "text" : target?.matches?.("a") ? "link" : target ? "button" : "core");
+    const state=target?.dataset?.cursor || (target?.matches?.("input,textarea,select") ? "text" : target?.matches?.("button,.primary,.hire,.resume,.projectlink,.contactlinks a") ? "button" : target?.matches?.("a") ? "link" : "core");
     cursor.dataset.state=state;
   };
   const animate=()=>{sx+=(x-sx)*.2;sy+=(y-sy)*.2;cursor.style.left=sx+"px";cursor.style.top=sy+"px";raf=requestAnimationFrame(animate)};
   document.addEventListener("mousemove",move,{passive:true});
   document.addEventListener("mouseover",updateState,{passive:true});
   document.addEventListener("mouseout",updateState,{passive:true});
-  document.addEventListener("mousedown",()=>cursor.classList.add("cursor-click"));
-  document.addEventListener("mouseup",()=>cursor.classList.remove("cursor-click"));
+  const down=()=>cursor.classList.add("cursor-click");
+  const up=()=>cursor.classList.remove("cursor-click");
+  document.addEventListener("mousedown",down);
+  document.addEventListener("mouseup",up);
   raf=requestAnimationFrame(animate);
-  return ()=>{cancelAnimationFrame(raf);document.removeEventListener("mousemove",move);document.removeEventListener("mouseover",updateState);document.removeEventListener("mouseout",updateState);document.removeEventListener("mousedown",()=>{});document.removeEventListener("mouseup",()=>{})};
+  return ()=>{cancelAnimationFrame(raf);document.removeEventListener("mousemove",move);document.removeEventListener("mouseover",updateState);document.removeEventListener("mouseout",updateState);document.removeEventListener("mousedown",down);document.removeEventListener("mouseup",up)};
 },[]);
 
 return <div id="top" className="site">
@@ -40,7 +42,7 @@ return <div id="top" className="site">
   <div className="navlinks">
     {["about","skills","projects","experience","leetcode","contact"].map(id=><a key={id} href={"#"+id} onClick={e=>{e.preventDefault();document.getElementById(id)?.scrollIntoView({behavior:"smooth"})}}>{"/"+id.toUpperCase()}</a>)}
   </div>
-  <a className="hire" href="mailto:surenravi2701@gmail.com?subject=Portfolio%20Contact">HIRE ME <ArrowUpRight size={17}/></a>
+  <a className="hire" data-cursor="button" href="mailto:surenravi2701@gmail.com?subject=Portfolio%20Contact">HIRE ME <ArrowUpRight size={17}/></a>
 </nav>
 
 <main>
@@ -58,8 +60,8 @@ return <div id="top" className="site">
       <h1>AI &amp; DATA SCIENCE<br/><strong>STUDENT<span>|</span></strong></h1>
       <p className="hero-line">Turning data into insights,<br/>and ideas into impact<span>_</span></p>
       <div className="actions">
-        <a className="primary" href="#projects" onClick={(e)=>{e.preventDefault();document.querySelector("#projects")?.scrollIntoView({behavior:"smooth"})}}><ArrowUpRight/> VIEW PROJECTS</a>
-        <a className="resume" href="/Suren-R-Resume.html" target="_blank" rel="noreferrer"><Download/> VIEW RESUME</a>
+        <a className="primary" data-cursor="button" href="#projects" onClick={(e)=>{e.preventDefault();document.querySelector("#projects")?.scrollIntoView({behavior:"smooth"})}}><ArrowUpRight/> VIEW PROJECTS</a>
+        <a className="resume" data-cursor="button" href="/Suren-R-Resume.html" target="_blank" rel="noreferrer"><Download/> VIEW RESUME</a>
       </div>
     </motion.div>
     <div className="socials">
@@ -72,7 +74,7 @@ return <div id="top" className="site">
   </div>
 
   <div className="hero-character">
-    <img src="/suren-avatar.png" alt="Suren illustrated avatar" onError={(e)=>{e.currentTarget.style.display="none";e.currentTarget.parentElement.classList.add("avatar-missing")}}/>
+    <img src="/suren-avatar.png" alt="Suren illustrated avatar" data-cursor="view" onError={(e)=>{e.currentTarget.style.display="none";e.currentTarget.parentElement.classList.add("avatar-missing")}}/>
     <div className="blue-block"/>
     <div className="scribble">Better<br/>Code<br/>Bigger<br/>Dreams</div>
   </div>
@@ -87,7 +89,7 @@ return <div id="top" className="site">
 <section className="ticker"><span>/// BUILD</span><span>/// LEARN</span><span>/// AI &amp; DATA SCIENCE</span><span>/// MODERN WEB</span><span>/// OPEN TO BUILD</span></section>
 
 <section id="about" className="section about">
-  <div className="avatar-card"><img src="/suren-avatar.png" alt="Suren illustrated avatar"/></div>
+  <div className="avatar-card"><img src="/suren-avatar.png" alt="Suren illustrated avatar" data-cursor="view"/></div>
   <div><p className="eyebrow">01 — WHO AM I?</p><h2>Curious by nature.<br/><em>Builder by choice.</em></h2><p className="copy">I'm Suren R — an Artificial Intelligence &amp; Data Science student who enjoys building practical digital solutions. I work across programming, web development and AI while continuously improving my problem-solving skills.</p><div className="quote">&gt; Always learning, always building, always improving.<br/>&gt; Exploring AI, data, DSA, React and modern web development.</div><div className="badges"><span>📍 INDIA</span><span>🟢 LEARNING &amp; BUILDING</span></div></div>
 </section>
 
@@ -98,7 +100,7 @@ return <div id="top" className="site">
 
 <section id="projects" className="section projects-section">
   <div className="section-title light"><h2>SELECTED <span>WORK</span></h2><a href="https://github.com/Suren-RK?tab=repositories" target="_blank" rel="noreferrer">VIEW ALL ↗</a></div>
-  <div className="projects">{projects.map((p,i)=><motion.article whileHover={{y:-7}} key={p.name}><div className="projecttop"><span>PROJECT_0{i+1}</span><a href={p.repo} target="_blank" rel="noreferrer" aria-label={"Open "+p.name+" repository"}><ArrowUpRight/></a></div><h3>{p.name}</h3><p>{p.desc}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="projectlink" href={p.repo} target="_blank" rel="noreferrer">VIEW REPOSITORY <ExternalLink size={14}/></a></motion.article>)}</div>
+  <div className="projects">{projects.map((p,i)=><motion.article whileHover={{y:-7}} key={p.name}><div className="projecttop"><span>PROJECT_0{i+1}</span><a href={p.repo} target="_blank" rel="noreferrer" aria-label={"Open "+p.name+" repository"}><ArrowUpRight/></a></div><h3>{p.name}</h3><p>{p.desc}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="projectlink" data-cursor="button" href={p.repo} target="_blank" rel="noreferrer">VIEW REPOSITORY <ExternalLink size={14}/></a></motion.article>)}</div>
 </section>
 
 <section id="experience" className="section experience">
@@ -111,9 +113,9 @@ return <div id="top" className="site">
   </div>
 </section>
 
-<section id="leetcode" className="leetcode"><div><p className="eyebrow">05 — PROBLEM SOLVING</p><h2>LEETCODE <em>MODE.</em></h2><p>Practicing algorithms and data structures consistently.</p></div><a className="primary" href="https://leetcode.com/surenravi/" target="_blank" rel="noreferrer">OPEN PROFILE <ArrowUpRight/></a></section>
+<section id="leetcode" className="leetcode"><div><p className="eyebrow">05 — PROBLEM SOLVING</p><h2>LEETCODE <em>MODE.</em></h2><p>Practicing algorithms and data structures consistently.</p></div><a className="primary" data-cursor="button" href="https://leetcode.com/surenravi/" target="_blank" rel="noreferrer">OPEN PROFILE <ArrowUpRight/></a></section>
 
-<section id="contact" className="contact"><p className="eyebrow">06 — CONTACT</p><h2>HAVE AN IDEA?<br/><em>LET'S BUILD IT.</em></h2><p>Learning, collaborating and building something meaningful — one project at a time.</p><div className="contactlinks"><a href="mailto:surenravi2701@gmail.com"><Mail/> EMAIL</a><a href="https://www.linkedin.com/in/Suren-Ravi" target="_blank" rel="noreferrer"><ArrowUpRight/> LINKEDIN</a><a href="https://leetcode.com/surenravi/" target="_blank" rel="noreferrer"><Code2/> LEETCODE</a><a href="https://github.com/Suren-RK" target="_blank" rel="noreferrer"><GitBranch/> GITHUB</a></div></section>
+<section id="contact" className="contact"><p className="eyebrow">06 — CONTACT</p><h2>HAVE AN IDEA?<br/><em>LET'S BUILD IT.</em></h2><p>Learning, collaborating and building something meaningful — one project at a time.</p><div className="contactlinks"><a data-cursor="button" href="mailto:surenravi2701@gmail.com"><Mail/> EMAIL</a><a data-cursor="button" href="https://www.linkedin.com/in/Suren-Ravi" target="_blank" rel="noreferrer"><ArrowUpRight/> LINKEDIN</a><a data-cursor="button" href="https://leetcode.com/surenravi/" target="_blank" rel="noreferrer"><Code2/> LEETCODE</a><a data-cursor="button" href="https://github.com/Suren-RK" target="_blank" rel="noreferrer"><GitBranch/> GITHUB</a></div></section>
 </main>
 <footer><span>// BUILD · LEARN · GROW</span><span>AI × DATA × WEB</span><span>SUREN R. © 2026</span></footer>
 </div>

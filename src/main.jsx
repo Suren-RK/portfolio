@@ -6,8 +6,8 @@ import "./style.css";
 import "./project-motion.css";
 import "./experience-motion.css";
 import "./experience-polish.css";
-import "./about-polish.css";
 import "./hero-polish.css";
+import "./mobile-polish.css";
 
 const projects=[
 {name:"SkillQuest",desc:"A learning-focused web project built while exploring modern frontend development.",tags:["React","JavaScript"],repo:"https://github.com/Suren-RK/Skilllquest"},

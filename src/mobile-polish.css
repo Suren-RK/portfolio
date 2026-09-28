@@ -10,19 +10,8 @@
   .actions{gap:12px;flex-wrap:wrap;margin-top:25px}.primary,.resume{padding:11px 13px;font-size:11px;box-shadow:4px 4px 0 var(--ink)}
   .socials{margin-top:32px;gap:8px}.socials>a{width:44px;height:44px;box-shadow:2px 2px 0 var(--ink);font-size:14px}.socials>span{font-size:10px;margin-left:5px;padding-left:10px;gap:8px}
   .hero-character{right:-62px;width:86%;height:44%;opacity:.96}.blue-block{width:43%;height:42%;right:28%;bottom:25%}.scribble{right:3%;top:5%;font-size:13px}
-
-  /* ABOUT — mobile-first composition: story first, portrait second */
-  .section{padding:68px 20px}
-  .about{display:flex;flex-direction:column;gap:28px;align-items:stretch}
-  .about > div:nth-child(2){order:1}
-  .about > .avatar-card{order:2;width:100%;min-height:245px;height:245px;margin-top:4px;box-shadow:5px 5px 0 var(--ink)}
-  .about > .avatar-card img{width:100%;height:100%;min-height:0;object-fit:contain;object-position:center bottom;display:block}
-  .about .eyebrow{margin-bottom:15px;font-size:10px}
-  .about h2{font-size:clamp(35px,10.5vw,48px);line-height:.94;letter-spacing:-2.4px;margin-bottom:18px}
-  .copy{font-size:13px;line-height:1.7}
-  .quote{font-size:10.5px;line-height:1.65;margin-top:18px;padding-left:12px}
-  .badges{gap:7px;margin-top:19px}.badges span{font-size:8.5px;padding:7px 8px}
-
+  .section{padding:68px 20px}.about{gap:32px}.avatar-card{min-height:330px}.avatar-card img{min-height:330px}
+  .about h2,.experience h2,.leetcode h2,.contact h2{font-size:clamp(38px,11vw,52px);letter-spacing:-2.5px;margin-bottom:20px}.copy{font-size:14px;line-height:1.7}.quote{font-size:11px;line-height:1.7;margin-top:20px;padding-left:13px}.badges{gap:8px;margin-top:22px}.badges span{font-size:9px;padding:8px 9px}
   .skills-section{padding:68px 20px}.section-title{padding-bottom:18px}.section-title h2{font-size:clamp(43px,12vw,58px);letter-spacing:-3px}.section-title b{font-size:9px}.skillgrid{grid-template-columns:1fr 1fr;margin-top:30px}.skill{min-height:100px;padding:15px}.skill strong{font-size:16px}.skill small{font-size:8px}
   .projects-section{padding:68px 20px}.projects{grid-template-columns:1fr;gap:18px;margin-top:32px}.projects article{min-height:300px;padding:20px;box-shadow:5px 5px 0 var(--ink)}.projects h3{font-size:29px;margin:48px 0 8px}.projects p{font-size:12px;line-height:1.65}.projecttop a{width:34px;height:34px}
   .experience{padding-top:68px;padding-bottom:75px}.experience-head{margin-bottom:28px}.journey-meta{margin-top:18px}.journey-panels{gap:12px}.experience .journey-panel{padding:20px 18px;min-height:0}.experience .panel-year{font-size:25px}.experience .panel-content{margin-top:8px}.experience .panel-content h3{font-size:24px}.experience .panel-content p{font-size:12px;line-height:1.6}.experience .panel-status{font-size:9px}
@@ -34,12 +23,6 @@
   .brand{font-size:18px;padding:9px 11px}.navlinks{font-size:10px;gap:15px;padding-top:8px}.hire{font-size:10px}
   .hero{min-height:790px;padding-top:34px}.hero h1{font-size:43px}.hero-character{right:-70px;width:91%;height:40%}.actions>*{flex:1;min-width:145px}.socials>span{display:none}
   .section{padding-left:17px;padding-right:17px}.skills-section,.projects-section{padding-left:17px;padding-right:17px}.skillgrid{gap:0}.skill{min-height:92px;padding:13px 12px}.skill strong{font-size:14px}.projects article{min-height:285px}
-  /* Keep the portrait compact on phones so the About copy remains the focal point. */
-  .about{gap:24px}
-  .about > .avatar-card{height:215px;min-height:215px;margin-top:2px}
-  .about h2{font-size:38px;letter-spacing:-2px}
-  .about .copy{font-size:12px;line-height:1.7}
-  .about .quote{font-size:10px}
   .experience .journey-panel{padding:18px 16px}.experience .panel-content h3{font-size:22px}.experience .panel-content b{font-size:11px}.experience .panel-tags span{font-size:8px}
   .leetcode,.contact{padding-left:17px;padding-right:17px}.contactlinks a{flex:1;justify-content:center;min-width:45%}
 }

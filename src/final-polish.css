@@ -1,0 +1,176 @@
+/* SUREN.EXE // FINAL POLISH
+   Visual cleanup layer: spacing, hierarchy, focus states, responsive behavior.
+*/
+
+:root{
+  --polish-blue:#2161ff;
+  --polish-cyan:#00d9ff;
+  --polish-ink:#101114;
+  --polish-paper:#fafaf7;
+}
+
+/* Better keyboard feedback without changing the mouse cursor experience. */
+a:focus-visible,
+button:focus-visible{
+  outline:3px solid var(--polish-cyan);
+  outline-offset:4px;
+}
+
+/* Keep the desktop cursor treatment intentional. */
+@media (min-width:801px){
+  html,body,.site,a,button,input,textarea,select{cursor:none!important}
+}
+
+/* Hero: slightly calmer composition and cleaner text measure. */
+.hero-line{max-width:520px}
+.actions{align-items:center}
+.resume,.hire,.primary{min-height:46px}
+.socials>a{transition:transform .2s ease,box-shadow .2s ease,color .2s ease,border-color .2s ease}
+.socials>a:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--polish-ink)}
+
+/* About: give the identity block a more deliberate frame. */
+.avatar-card{box-shadow:8px 8px 0 var(--polish-ink)}
+.avatar-card::after{
+  content:"PROFILE // ACTIVE";
+  position:absolute;
+  right:14px;
+  bottom:14px;
+  z-index:4;
+  padding:6px 8px;
+  border:2px solid var(--polish-ink);
+  background:rgba(255,255,255,.94);
+  font:10px 'DM Mono',monospace;
+  letter-spacing:.6px;
+}
+.quote{background:linear-gradient(90deg,rgba(139,92,246,.06),transparent);padding-top:6px;padding-bottom:6px}
+.badges span{transition:transform .2s ease,background .2s ease,color .2s ease}
+.badges span:hover{transform:translateY(-2px);background:var(--polish-blue);color:#fff}
+
+/* Skills: consistent rhythm and a clearer active state. */
+.skill{position:relative}
+.skill i{font-style:normal;color:#35d76c;font-size:9px;transition:transform .2s ease}
+.skill:hover i{transform:scale(1.35)}
+
+/* Projects: keep cards visually equal and make the CTA easier to scan. */
+.projects article{min-height:390px}
+.projects article:hover{box-shadow:10px 10px 0 var(--polish-ink)}
+.projectlink{width:max-content;padding-bottom:4px;border-bottom:2px solid transparent;transition:transform .2s ease,border-color .2s ease,color .2s ease}
+.projectlink:hover{border-color:var(--polish-blue);transform:translateX(3px)}
+
+/* Experience: the existing page uses a modern journey panel on desktop;
+   these rules keep the section breathing if the viewport gets tighter. */
+.experience-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:45px}
+.journey-meta{display:flex;flex-direction:column;align-items:flex-end;gap:10px;font:11px 'DM Mono',monospace}
+.journey-meta b{color:#555;font-weight:500}
+.journey-meta i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#20df64;margin-right:6px}
+.journey-panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.journey-panel{position:relative;min-height:420px;border:3px solid var(--polish-ink);background:#fff;box-shadow:7px 7px 0 var(--polish-ink);padding:22px;overflow:hidden}
+.panel-index{font:11px 'DM Mono',monospace}.panel-index span{color:#777}
+.panel-year{position:absolute;right:22px;top:20px;font:700 12px 'DM Mono',monospace;color:var(--polish-blue)}
+.panel-content{margin-top:65px;max-width:390px}
+.panel-content small{font:10px 'DM Mono',monospace;color:#666}
+.panel-content h3{font-size:27px;line-height:1;margin:12px 0 9px;letter-spacing:-1px}
+.panel-content>b{font:700 11px 'DM Mono',monospace}
+.panel-content p{font:13px/1.7 'DM Mono',monospace;color:#555}
+.panel-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
+.panel-tags span{border:2px solid var(--polish-ink);padding:6px 8px;font:9px 'DM Mono',monospace}
+.panel-visual{position:absolute;right:22px;bottom:62px;opacity:.35}
+.signal-bars{display:flex;align-items:flex-end;gap:4px;height:46px}
+.signal-bars i{display:block;width:6px;background:var(--polish-blue)}
+.signal-bars i:nth-child(1){height:12px}.signal-bars i:nth-child(2){height:25px}.signal-bars i:nth-child(3){height:18px}.signal-bars i:nth-child(4){height:35px}.signal-bars i:nth-child(5){height:44px}
+.panel-status{position:absolute;left:22px;right:22px;bottom:18px;border-top:1px solid #bbb;padding-top:10px;font:10px 'DM Mono',monospace}
+.panel-status i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#20df64;margin-right:6px}
+
+/* LeetCode: keep the terminal-inspired identity, but reduce visual noise. */
+.leetcode{gap:40px}
+.leetcode .primary{flex:0 0 auto}
+
+/* Contact: make the final CTA feel like a deliberate endpoint. */
+.contact{position:relative}
+.contact::before{
+  content:"";
+  display:block;
+  width:72px;
+  height:4px;
+  margin:0 auto 34px;
+  background:linear-gradient(90deg,var(--polish-cyan),var(--polish-blue));
+}
+.contactlinks a{transition:transform .2s ease,box-shadow .2s ease,color .2s ease,border-color .2s ease}
+.contactlinks a:hover{box-shadow:6px 6px 0 var(--polish-ink)}
+
+/* Footer hierarchy. */
+footer span:nth-child(2){color:var(--polish-blue);font-weight:700}
+
+/* Tablet. */
+@media (max-width:1050px){
+  .topbar{padding:0 12px}
+  .brand{margin-left:10px}
+  .navlinks{padding-left:18px}
+  .hire{margin-left:14px}
+  .about{gap:42px}
+  .projects article{min-height:370px}
+  .journey-panels{grid-template-columns:1fr}
+  .journey-panel{min-height:330px}
+}
+
+/* Mobile: prioritize readable type, tap targets and clean stacking. */
+@media (max-width:800px){
+  .topbar{box-shadow:4px 4px 0 var(--polish-ink)}
+  .navlinks{gap:20px;scrollbar-width:none}
+  .navlinks::-webkit-scrollbar{display:none}
+  .hire{min-height:44px;padding:10px 13px}
+  .hero{min-height:850px;padding-top:42px}
+  .hero h1{max-width:100%;font-size:clamp(43px,11vw,58px);line-height:.92}
+  .hero-line{max-width:360px;margin-top:26px}
+  .actions{gap:12px;flex-wrap:wrap}
+  .actions>a{min-height:46px}
+  .socials{margin-top:32px}
+  .hero-character{opacity:.95}
+  .about h2,.experience h2,.leetcode h2,.contact h2{letter-spacing:-2.5px}
+  .copy{font-size:15px;line-height:1.7}
+  .avatar-card::after{font-size:9px}
+  .skills-section,.projects-section{padding-left:22px;padding-right:22px}
+  .section-title{align-items:flex-start;gap:16px;flex-direction:column}
+  .section-title h2{font-size:clamp(48px,13vw,72px)}
+  .skillgrid{margin-top:34px}
+  .skill{min-height:105px;padding:16px}
+  .skill strong{font-size:17px}
+  .projects{margin-top:35px;gap:18px}
+  .projects article{min-height:340px;padding:20px}
+  .projects h3{font-size:30px;margin-top:48px}
+  .experience{padding-top:72px}
+  .experience-head{display:block;margin-bottom:32px}
+  .journey-meta{align-items:flex-start;margin-top:22px}
+  .journey-panel{min-height:360px;padding:18px}
+  .panel-content{margin-top:55px}
+  .panel-content h3{font-size:23px}
+  .panel-visual{right:18px;bottom:60px}
+  .leetcode{margin:0 22px;padding:55px 22px;display:flex;flex-direction:column;align-items:flex-start;gap:28px}
+  .leetcode .primary{width:100%}
+  .contact{padding:75px 22px}
+  .contactlinks{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .contactlinks a{justify-content:center;min-height:46px}
+  footer{padding:22px;gap:10px;flex-direction:column;text-align:center}
+}
+
+@media (max-width:430px){
+  .brand{font-size:18px;padding:10px 12px}
+  .hire{font-size:11px;padding:9px 10px}
+  .hero{min-height:820px;padding-left:18px;padding-right:18px}
+  .hero h1{font-size:42px}
+  .hero-character{right:-70px;width:92%;height:43%}
+  .socials>a{width:45px;height:45px}
+  .skillgrid{grid-template-columns:1fr}
+  .skill{min-height:92px}
+  .contactlinks{grid-template-columns:1fr}
+}
+
+/* Respect OS-level reduced-motion preferences. */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
+}

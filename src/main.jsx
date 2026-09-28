@@ -5,6 +5,7 @@ import {motion,useMotionValue,useSpring} from "framer-motion";
 import "./style.css";
 import "./project-motion.css";
 import "./experience-motion.css";
+import "./experience-polish.css";
 import "./hero-polish.css";
 
 const projects=[

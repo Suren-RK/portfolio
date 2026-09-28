@@ -1,0 +1,31 @@
+/* SUREN.EXE // EXPERIENCE LAYOUT FIX */
+.experience .journey-panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.experience .journey-panel{display:block;position:relative;min-height:430px;padding:24px 28px;overflow:hidden}
+.experience .panel-index{position:absolute;left:28px;top:28px}
+.experience .panel-year{position:absolute;right:28px;top:24px;font-size:28px}
+.experience .panel-content{display:flex;flex-direction:column;justify-content:flex-start;margin:74px auto 0;max-width:285px}
+.experience .panel-content h3{font-size:27px;line-height:1.05;margin:10px 0 8px}
+.experience .panel-content p{font-size:13px;line-height:1.6;margin:12px 0 14px}
+.experience .panel-tags{margin-top:12px}
+.experience .panel-visual{display:none}
+.experience .panel-status{position:absolute;left:28px;right:28px;bottom:18px;border-top:1px solid #bbb;padding-top:10px}
+.experience .journey-panel:hover{transform:translateY(-4px);box-shadow:8px 9px 0 rgba(33,97,255,.08)}
+@media(max-width:1050px){
+  .experience .journey-panels{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .experience .journey-panel{padding:22px 20px;min-height:420px}
+  .experience .panel-index{left:20px;top:22px}
+  .experience .panel-year{right:20px;top:20px;font-size:25px}
+  .experience .panel-content{max-width:245px;margin-top:70px}
+  .experience .panel-content h3{font-size:23px}
+  .experience .panel-content p{font-size:12px}
+  .experience .panel-status{left:20px;right:20px}
+}
+@media(max-width:800px){
+  .experience .journey-panels{grid-template-columns:1fr;gap:14px}
+  .experience .journey-panel{min-height:360px;padding:22px 20px}
+  .experience .panel-index{left:20px;top:22px}
+  .experience .panel-year{left:auto;right:20px;top:20px;font-size:28px}
+  .experience .panel-content{max-width:none;margin-top:68px}
+  .experience .panel-content h3{font-size:25px}
+  .experience .panel-content p{font-size:13px}
+}

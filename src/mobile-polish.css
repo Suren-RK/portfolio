@@ -460,10 +460,10 @@
   .stack-window{
     display:block;
     z-index:7;
-    right:10px;
+    right:8px;
     top:auto;
-    bottom:118px;
-    width:178px;
+    bottom:235px;
+    width:158px;
     padding:9px 11px;
     font-size:9px;
     line-height:1.45;
@@ -492,9 +492,9 @@
   }
 
   .stack-window{
-    right:7px;
-    bottom:108px;
-    width:165px;
+    right:6px;
+    bottom:220px;
+    width:150px;
     padding:8px 10px;
     font-size:8.5px;
   }

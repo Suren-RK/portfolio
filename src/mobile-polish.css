@@ -438,3 +438,64 @@
     right:-9px;
   }
 }
+
+
+/* MOBILE HERO — avatar + tech stack only
+   Preserve the existing text, typography and layout. */
+@media (max-width: 800px){
+  .hero-character{
+    width:96%;
+    height:300px;
+    right:-18px;
+    bottom:0;
+  }
+
+  .hero-character img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center bottom;
+  }
+
+  .stack-window{
+    display:block;
+    z-index:7;
+    right:10px;
+    top:auto;
+    bottom:118px;
+    width:178px;
+    padding:9px 11px;
+    font-size:9px;
+    line-height:1.45;
+    box-shadow:4px 4px 0 var(--ink);
+  }
+
+  .stack-window>div{
+    padding-bottom:5px;
+    margin-bottom:5px;
+  }
+
+  .stack-window p{
+    margin:3px 0;
+  }
+
+  .currently{
+    display:none;
+  }
+}
+
+@media (max-width: 480px){
+  .hero-character{
+    width:101%;
+    height:285px;
+    right:-20px;
+  }
+
+  .stack-window{
+    right:7px;
+    bottom:108px;
+    width:165px;
+    padding:8px 10px;
+    font-size:8.5px;
+  }
+}

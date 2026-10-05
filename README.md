@@ -6,6 +6,16 @@ AI & Data Science student building practical projects with AI, data, and modern 
 
 **[surenr.vercel.app](https://surenr.vercel.app)**
 
+## 🔥 DSA / LeetCode Streak
+
+### 2026-10-05 — Longest Valid Parentheses
+
+- LeetCode: **32. Longest Valid Parentheses**
+- Topic: **Stack**
+- Solved using a stack of indexes.
+- Key idea: use `-1` as the initial boundary and calculate valid length with `i - stack[-1]`.
+- Practiced understanding why the boundary is reset when the stack becomes empty.
+
 ## Connect
 
 - GitHub: https://github.com/Suren-RK

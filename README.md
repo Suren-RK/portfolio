@@ -22,6 +22,12 @@ AI & Data Science student building practical projects with AI, data, and modern 
 - Key idea: use `-1` as the initial boundary and calculate valid length with `i - stack[-1]`.
 - Practiced understanding why the boundary is reset when the stack becomes empty.
 
+## Current Focus
+
+- Practicing Data Structures and Algorithms with Python.
+- Improving React skills by building responsive web interfaces.
+- Developing and documenting practical projects as I learn.
+
 ## Connect
 
 - GitHub: https://github.com/Suren-RK

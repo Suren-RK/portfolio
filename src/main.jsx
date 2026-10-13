@@ -27,8 +27,8 @@ useEffect(()=>{
   const move=e=>{x=e.clientX;y=e.clientY;if(heroRef.current){const r=heroRef.current.getBoundingClientRect();mouseX.set(((e.clientX-r.left)/r.width-.5)*2);mouseY.set(((e.clientY-r.top)/r.height-.5)*2)}};
   const animate=()=>{sx+=(x-sx)*.18;sy+=(y-sy)*.18;if(scanner){scanner.style.left=sx+"px";scanner.style.top=sy+"px"}frame=requestAnimationFrame(animate)};
   const enter=()=>scanner?.classList.add("scanner-hover"),leave=()=>scanner?.classList.remove("scanner-hover");
-  document.addEventListener("mousemove",move);document.querySelectorAll("a,button").forEach(el=>{el.addEventListener("mouseenter",enter);el.addEventListener("mouseleave",leave)});frame=requestAnimationFrame(animate);
-  return()=>{document.removeEventListener("mousemove",move);cancelAnimationFrame(frame);document.querySelectorAll("a,button").forEach(el=>{el.removeEventListener("mouseenter",enter);el.removeEventListener("mouseleave",leave)})};
+  document.addEventListener("mousemove",move);const interactiveElements=[...document.querySelectorAll("a,button")];interactiveElements.forEach(el=>{el.addEventListener("mouseenter",enter);el.addEventListener("mouseleave",leave)});frame=requestAnimationFrame(animate);
+  return()=>{document.removeEventListener("mousemove",move);cancelAnimationFrame(frame);interactiveElements.forEach(el=>{el.removeEventListener("mouseenter",enter);el.removeEventListener("mouseleave",leave)})};
 },[mouseX,mouseY]);
 const floatTransition={duration:3.2,repeat:Infinity,ease:"easeInOut"};
 return <div id="top" className="site">

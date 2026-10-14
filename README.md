@@ -22,6 +22,15 @@ AI & Data Science student building practical projects with AI, data, and modern 
 - Key idea: use `-1` as the initial boundary and calculate valid length with `i - stack[-1]`.
 - Practiced understanding why the boundary is reset when the stack becomes empty.
 
+## Problem-Solving Notes
+
+**Longest Valid Parentheses — Stack approach**
+
+- Store character indexes instead of the characters themselves.
+- Keep `-1` as the initial boundary so valid substring lengths can be calculated.
+- When a closing parenthesis leaves the stack empty, set the current index as the new boundary.
+- Track the maximum length with `i - stack[-1]` whenever the stack is non-empty.
+
 ## Current Focus
 
 - Practicing Data Structures and Algorithms with Python.

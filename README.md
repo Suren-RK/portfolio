@@ -31,6 +31,12 @@ AI & Data Science student building practical projects with AI, data, and modern 
 - When a closing parenthesis leaves the stack empty, set the current index as the new boundary.
 - Track the maximum length with `i - stack[-1]` whenever the stack is non-empty.
 
+## Learning Approach
+
+- Break unfamiliar topics into manageable steps.
+- Practice each concept with examples before moving to harder problems.
+- Revisit mistakes and turn them into notes for future practice.
+
 ## Project Workflow
 
 1. Define a small, clear goal before starting.

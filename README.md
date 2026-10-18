@@ -31,29 +31,12 @@ AI & Data Science student building practical projects with AI, data, and modern 
 - When a closing parenthesis leaves the stack empty, set the current index as the new boundary.
 - Track the maximum length with `i - stack[-1]` whenever the stack is non-empty.
 
-## Learning Approach
+## Current Focus & Workflow
 
-- Break unfamiliar topics into manageable steps.
-- Practice each concept with examples before moving to harder problems.
-- Revisit mistakes and turn them into notes for future practice.
-
-## Project Workflow
-
-1. Define a small, clear goal before starting.
-2. Build the simplest working version first.
-3. Test the result, note what can improve, and iterate.
-
-## Development Principles
-
-- Learn concepts by applying them in small, practical projects.
-- Keep problem-solving notes so useful patterns are easier to revisit.
-- Improve projects iteratively instead of waiting for them to be perfect.
-
-## Current Focus
-
-- Practicing Data Structures and Algorithms with Python.
-- Improving React skills by building responsive web interfaces.
-- Developing and documenting practical projects as I learn.
+- **DSA:** Practice problem-solving with Python and keep notes on useful patterns.
+- **Frontend:** Improve React skills by building responsive web interfaces.
+- **Projects:** Start with a clear, manageable goal, build a working version, then test and improve it.
+- **Learning:** Break unfamiliar topics into steps and use mistakes as opportunities to improve.
 
 ## Connect
 
@@ -66,10 +49,3 @@ AI & Data Science student building practical projects with AI, data, and modern 
 
 Python · Java · C/C++ · JavaScript · React JS · HTML/CSS · Tailwind CSS · Git/GitHub · AWS · Data Science · DSA
 
-<!-- Daily consistency check-in: keep building, one step at a time. -->
-
-<!-- Small daily progress note: consistency beats intensity. -->
-
-<!-- Daily note: small steps still count. -->
-
-<!-- Daily reminder: progress can be quiet and still be real. -->

@@ -6,30 +6,17 @@ AI & Data Science student building practical projects with AI, data, and modern 
 
 **[surenr.vercel.app](https://surenr.vercel.app)**
 
-## 🔥 DSA / LeetCode Streak
+## DSA Practice Notes
 
-### 2026-10-06 — Daily DSA Practice
+**LeetCode 32 — Longest Valid Parentheses**
 
-- Continued daily DSA practice.
-- Reviewed stack-based problem-solving patterns.
-- Focused on writing cleaner and more consistent Python solutions.
+- **Topic:** Stack
+- Store indexes rather than the parentheses themselves.
+- Start with `-1` as a boundary index.
+- For a closing parenthesis, pop the stack; if it becomes empty, push the current index as the new boundary.
+- Otherwise, calculate the valid length with `i - stack[-1]` and update the maximum.
 
-### 2026-10-05 — Longest Valid Parentheses
-
-- LeetCode: **32. Longest Valid Parentheses**
-- Topic: **Stack**
-- Solved using a stack of indexes.
-- Key idea: use `-1` as the initial boundary and calculate valid length with `i - stack[-1]`.
-- Practiced understanding why the boundary is reset when the stack becomes empty.
-
-## Problem-Solving Notes
-
-**Longest Valid Parentheses — Stack approach**
-
-- Store character indexes instead of the characters themselves.
-- Keep `-1` as the initial boundary so valid substring lengths can be calculated.
-- When a closing parenthesis leaves the stack empty, set the current index as the new boundary.
-- Track the maximum length with `i - stack[-1]` whenever the stack is non-empty.
+**Practice takeaway:** Resetting the boundary after the stack becomes empty prevents invalid characters from being included in later length calculations.
 
 ## Current Focus & Workflow
 

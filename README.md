@@ -25,6 +25,12 @@ AI & Data Science student building practical projects with AI, data, and modern 
 - **Projects:** Start with a clear, manageable goal, build a working version, then test and improve it.
 - **Learning:** Break unfamiliar topics into steps and use mistakes as opportunities to improve.
 
+## Highlights
+
+- **Portfolio:** A central place to explore my work and learning journey.
+- **Problem solving:** Practicing DSA and documenting approaches that help me understand each solution.
+- **Frontend development:** Building skills in React and responsive web interfaces.
+
 ## Connect
 
 - GitHub: https://github.com/Suren-RK

@@ -31,6 +31,16 @@ AI & Data Science student building practical projects with AI, data, and modern 
 - **Problem solving:** Practicing DSA and documenting approaches that help me understand each solution.
 - **Frontend development:** Building skills in React and responsive web interfaces.
 
+## Featured Project
+
+### Personal Portfolio Website
+
+A personal portfolio built with React and Vite to present my background, skills, and work in one place.
+
+- **Focus:** Responsive UI, personal branding, and clear navigation
+- **Live demo:** [surenr.vercel.app](https://surenr.vercel.app)
+- **Source code:** [GitHub repository](https://github.com/Suren-RK/portfolio)
+
 ## Connect
 
 - GitHub: https://github.com/Suren-RK

@@ -18,6 +18,10 @@ AI & Data Science student building practical projects with AI, data, and modern 
 
 **Practice takeaway:** Resetting the boundary after the stack becomes empty prevents invalid characters from being included in later length calculations.
 
+## Featured Project
+
+**SkillQuest** — a project from my learning journey. Visit my [portfolio](https://surenr.vercel.app) to explore the project and its current details.
+
 ## Current Focus & Workflow
 
 - **DSA:** Practice problem-solving with Python and keep notes on useful patterns.

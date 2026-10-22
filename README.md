@@ -18,10 +18,6 @@ AI & Data Science student building practical projects with AI, data, and modern 
 
 **Practice takeaway:** Resetting the boundary after the stack becomes empty prevents invalid characters from being included in later length calculations.
 
-## Featured Project
-
-**SkillQuest** — a project from my learning journey. Visit my [portfolio](https://surenr.vercel.app) to explore the project and its current details.
-
 ## Current Focus & Workflow
 
 - **DSA:** Practice problem-solving with Python and keep notes on useful patterns.
@@ -35,11 +31,17 @@ AI & Data Science student building practical projects with AI, data, and modern 
 - **Problem solving:** Practicing DSA and documenting approaches that help me understand each solution.
 - **Frontend development:** Building skills in React and responsive web interfaces.
 
-## Featured Project
+## Projects
+
+### SkillQuest
+
+A project from my learning journey. Visit my portfolio to explore the available project details.
+
+- **Project page:** [View on my portfolio](https://surenr.vercel.app)
 
 ### Personal Portfolio Website
 
-A personal portfolio built with React and Vite to present my background, skills, and work in one place.
+A React and Vite website presenting my background, skills, and work.
 
 - **Focus:** Responsive UI, personal branding, and clear navigation
 - **Live demo:** [surenr.vercel.app](https://surenr.vercel.app)

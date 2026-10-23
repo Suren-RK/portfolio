@@ -47,7 +47,11 @@ A React and Vite website presenting my background, skills, and work.
 - **Live demo:** [surenr.vercel.app](https://surenr.vercel.app)
 - **Source code:** [GitHub repository](https://github.com/Suren-RK/portfolio)
 
-## Connect
+## Contact
+
+Interested in collaborating or discussing a project? Reach out through one of the profiles below.
+
+### Find me online
 
 - GitHub: https://github.com/Suren-RK
 - LinkedIn: https://www.linkedin.com/in/Suren-Ravi
